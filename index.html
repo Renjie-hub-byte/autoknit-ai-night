@@ -228,6 +228,24 @@
   .iter-figure{margin:0}
   .iter-figure svg{display:block;width:100%;height:auto}
 
+  /* workflow */
+  .workflow-layout{display:grid;grid-template-columns:1.4fr .6fr;gap:54px;flex:1;min-height:0}
+  .wf-steps{display:flex;flex-direction:column;justify-content:space-between;border-top:1px solid var(--line);min-height:0}
+  .wf-step{display:grid;grid-template-columns:34px 1fr 92px;gap:14px;padding:11px 0;border-bottom:1px solid var(--line-2);align-items:start}
+  .wf-step .n{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--teal);padding-top:5px}
+  .wf-step h3{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.25;margin-bottom:2px}
+  .wf-step p{font-size:13.5px;line-height:1.55;color:var(--ink-2)}
+  .wf-step .who{text-align:right;font-family:var(--mono);font-size:9px;letter-spacing:.06em;color:var(--muted);padding-top:6px}
+  .wf-step .who strong{display:block;font-family:var(--sans);font-size:12px;font-weight:600;color:var(--ink);margin-bottom:1px}
+  .wf-artifacts{display:flex;flex-direction:column;gap:12px;min-height:0}
+  .artifact{border-top:2px solid var(--teal);background:rgba(255,255,255,.5);padding:18px 18px 20px}
+  .artifact:nth-child(2){border-top-color:var(--orange)}
+  .artifact.result{border-top-color:var(--ink);background:var(--paper-2)}
+  .artifact .mono{font-size:9px;letter-spacing:.14em;color:var(--muted)}
+  .artifact h3{font-family:var(--serif);font-size:24px;font-weight:600;margin:5px 0 2px}
+  .artifact p{font-size:12.5px;line-height:1.5;color:var(--muted)}
+  .artifact .link{margin-top:9px}
+
   /* acceptance */
   .accept-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:58px;flex:1;min-height:0;align-items:center}
   .accept-big{display:flex;align-items:baseline;gap:2px;font-family:var(--serif);font-weight:600;line-height:1}
@@ -345,8 +363,8 @@
 
 <div id="stage">
 
-  <!-- 01 -->
-  <section class="slide cover active" data-title="封面">
+    <!-- 01 -->
+<section class="slide cover active" data-title="封面">
     <div class="cover-top">
       <span class="mono">AUTOKNIT · 自研 AI 编程工具</span>
       <span class="mono">网科 / 2026.11</span>
@@ -371,8 +389,8 @@
   </section>
 
   <!-- 02 -->
-  <section class="slide" data-title="痛点：三个崩法">
-    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">02 / 13</span></div>
+<section class="slide" data-title="痛点：三个崩法">
+    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">2 / 14</span></div>
     <h2>AI 写代码，为什么总是后半段崩</h2>
     <div class="pain-grid">
       <div class="pain" style="--d:.0s">
@@ -395,7 +413,7 @@
       </div>
     </div>
     <div class="pullquote">小 demo 很爽；稍微大一点，就开始<em>来回拉扯</em>。</div>
-    <div class="notes" data-time="1:10">
+    <div class="notes" data-time="1:05">
       <p>先对个号。有没有人用 AI 写过东西？写过超过 500 行的，举个手。……很少，对吧。</p>
       <p>不是你们不行，是这件事本身有个坎。三个崩法：第一，越写越偏，聊到后面它忘了前面的约定；第二，它说“完成了”，你一跑就报错，因为它只对“我写了”负责，不对“你能用”负责；第三，改 A 炸 B，没有边界，一坨代码牵一发动全身。</p>
       <p>小 demo 很爽，一到真要用，就开始拉扯。</p>
@@ -403,8 +421,8 @@
   </section>
 
   <!-- 03 -->
-  <section class="slide" data-title="聊天死循环">
-    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">03 / 13</span></div>
+<section class="slide" data-title="聊天死循环">
+    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">3 / 14</span></div>
     <h2>你一定见过的循环</h2>
     <div class="chat-layout">
       <div class="chat">
@@ -426,15 +444,15 @@
       </aside>
     </div>
     <div class="pullquote">这不是模型问题，是<em>流程问题</em>。</div>
-    <div class="notes" data-time="0:45">
+    <div class="notes" data-time="0:40">
       <p>这个循环你一定见过：你说做个学习网站，它说已完成；你说加个登录，它说加上了；你问原来的页面怎么打不开了，它说抱歉，我重新给你一份完整代码；你说积分怎么没了，它说抱歉，我再修一版。</p>
       <p>注意，它不是不聪明。它是在没有图纸、没有分工、没有验收的情况下开工。</p>
     </div>
   </section>
 
   <!-- 04 -->
-  <section class="slide" data-title="根因：缺工程纪律">
-    <div class="slide-head"><span class="section-label">02 / 根因</span><span class="page-num">04 / 13</span></div>
+<section class="slide" data-title="根因：缺工程纪律">
+    <div class="slide-head"><span class="section-label">02 / 根因</span><span class="page-num">4 / 14</span></div>
     <h2>他缺的是工程纪律。</h2>
     <p class="root-lede">许愿式编程很火：你可以跟一个木工说“给我打一把漂亮的椅子”，他能做到。<br>但你不可能跟他说“帮我把整个家装修一遍”。</p>
     <div class="split-visual">
@@ -475,15 +493,15 @@
       </div>
     </div>
     <div class="pullquote">AI 缺的不是智商，是<em>这支队伍</em>。</div>
-    <div class="notes" data-time="1:15">
+    <div class="notes" data-time="1:10">
       <p>所以根因不是模型，是缺工程纪律。许愿式编程很火：你可以跟一个木工说“给我打一把漂亮的椅子”，他能做到。但你不可能跟他说“帮我把整个家装修一遍”。</p>
       <p>一个家，需要的是一支纪律严明的装修队：有设计师、有项目经理、有图纸、有施工、有监理。AI 也一样。它缺的不是智商，是这支队伍。</p>
     </div>
   </section>
 
   <!-- 05 -->
-  <section class="slide" data-title="工程队：五个角色">
-    <div class="slide-head"><span class="section-label">02 / 根因 · 工程队</span><span class="page-num">05 / 13</span></div>
+<section class="slide" data-title="工程队：五个角色">
+    <div class="slide-head"><span class="section-label">02 / 根因 · 工程队</span><span class="page-num">5 / 14</span></div>
     <h2>一支装修队，是怎么把一个家装完的</h2>
     <div class="crew-flow">
       <div class="crew-node" style="--d:.0s">
@@ -518,15 +536,15 @@
       </div>
     </div>
     <div class="crew-foot">一个人可以打一把椅子；一个家，需要这五棒接力。少一棒，就会在某个环节塌。</div>
-    <div class="notes" data-time="1:10">
+    <div class="notes" data-time="1:05">
       <p>这支队伍有五棒：总设计师听需求；项目经理把需求拆成任务清单、给纪律；图纸把“怎么做”画清楚；施工人员照着清单交付；监理对着清单审计。</p>
       <p>注意，图纸不是装饰，是合同：接口、边界、验收标准都在上面。少了监理，施工人员就会自己说“我做好了”。</p>
     </div>
   </section>
 
   <!-- 06 -->
-  <section class="slide" data-title="AI 分工：五个角色">
-    <div class="slide-head"><span class="section-label">03 / 它是什么</span><span class="page-num">06 / 13</span></div>
+<section class="slide" data-title="AI 分工：五个角色">
+    <div class="slide-head"><span class="section-label">03 / 它是什么</span><span class="page-num">6 / 14</span></div>
     <h2>这套班子，搬进 AI 里</h2>
     <div class="crew-flow">
       <div class="crew-node" style="--d:.0s">
@@ -561,15 +579,15 @@
       </div>
     </div>
     <div class="crew-foot">你只出现在两头：提需求、验收。中间四棒，AI 自己跑。</div>
-    <div class="notes" data-time="1:10">
+    <div class="notes" data-time="1:05">
       <p>搬进 AI 里，就是这五个角色：你提需求；你的 AI 是总设计师，问清问题、产出完整设计；Planner 把设计消化成分工、任务清单和契约；Executor 照着清单写；Auditor 对着清单跑测试。</p>
       <p>你只出现在两头：提需求、验收。中间四棒，AI 自己跑。这就是为什么你能“说一句话，然后去干别的”。</p>
     </div>
   </section>
 
   <!-- 07 -->
-  <section class="slide" data-title="流水线：五个动作">
-    <div class="slide-head"><span class="section-label">03 / 它是什么</span><span class="page-num">07 / 13</span></div>
+<section class="slide" data-title="流水线：五个动作">
+    <div class="slide-head"><span class="section-label">03 / 它是什么</span><span class="page-num">7 / 14</span></div>
     <h2>一条流水线，五个动作</h2>
     <div class="pipeline-layout">
       <div class="pipeline">
@@ -585,15 +603,15 @@
         <figcaption>任务看板实拍 · 每块的状态、token、积分、打回都在这</figcaption>
       </figure>
     </div>
-    <div class="notes" data-time="1:10">
+    <div class="notes" data-time="1:05">
       <p>具体跑起来是五步：需求、设计、拆解、施工、验收。设计是你的 AI 做的；拆解是 Planner 做的；施工是 Executor 按清单写；验收是 Auditor 跑测试。不过就打回，不是从头再来。</p>
       <p>你看这张看板：哪块在跑、哪块被打回、每块花了多少 token、多少积分，一目了然。调度是程序做的，不烧 token。</p>
     </div>
   </section>
 
   <!-- 08 -->
-  <section class="slide" data-title="成本：为什么小模型够用">
-    <div class="slide-head"><span class="section-label">03 / 为什么成立</span><span class="page-num">08 / 13</span></div>
+<section class="slide" data-title="成本：为什么小模型够用">
+    <div class="slide-head"><span class="section-label">03 / 为什么成立</span><span class="page-num">8 / 14</span></div>
     <h2>为什么便宜模型够用</h2>
     <div class="cost-layout">
       <div class="cost-left">
@@ -617,7 +635,7 @@
       </div>
     </div>
     <div class="pullquote">省钱的不是模型，是<em>拆解</em>。</div>
-    <div class="notes" data-time="1:20">
+    <div class="notes" data-time="1:15">
       <p>为什么便宜模型够用？我们做过对照：同一类任务，Flash 低思考的成本，大概是旗舰高思考的 1/30。</p>
       <p>旗舰为什么厉害？它能长程思考，能想到你想不到的东西，可能做得更漂亮、兜底更多。但它一次要端住整个系统。拆成小块之后，每块只需要局部最优。于是我把 30 倍的额度拆成三份：一份专门规划，一份专门执行，一份专门审核。用 3 份预算，去换它 30 份的质量。</p>
       <p>注意，这不是说小模型比旗舰强，是说这个活被拆到不需要旗舰的粒度。同样是 1 个任务的预算，我能跑 30 次；30 次里拿 3 次做三个岗位。</p>
@@ -625,52 +643,8 @@
   </section>
 
   <!-- 09 -->
-  <section class="slide" data-title="案例：12 行到 2.3 万行">
-    <div class="slide-head"><span class="section-label">04 / 真实案例</span><span class="page-num">09 / 13</span></div>
-    <h2>一个真实的内部站点：AI 补给站</h2>
-    <div class="case-layout">
-      <div class="case-left">
-        <div class="mono" style="font-size:11px;letter-spacing:.14em;color:var(--muted);margin-bottom:2px">起点 · 12 行需求</div>
-        <div class="feature-list">
-          <div class="feature"><div class="n">01</div><div><div class="t">学习路径课程</div><div class="d">选课、里程碑、称号、评分</div></div></div>
-          <div class="feature"><div class="n">02</div><div><div class="t">技能分享社区</div><div class="d">上传、下载、评论、点赞、收藏</div></div></div>
-          <div class="feature"><div class="n">03</div><div><div class="t">管理后台</div><div class="d">上架、下架、取数、轮播</div></div></div>
-          <div class="feature"><div class="n">04</div><div><div class="t">管理 API</div><div class="d">让 Agent 拉取、修改、上传</div></div></div>
-          <div class="feature"><div class="n">05</div><div><div class="t">习题库</div><div class="d">随机刷题、错题本、收藏</div></div></div>
-          <div class="feature"><div class="n">06</div><div><div class="t">首页与个人页</div><div class="d">信息流、搜索、学习数据、勋章</div></div></div>
-        </div>
-        <div class="feature-more">… 共 12 条，来自 3 位同事</div>
-        <div class="case-links">
-          <a class="link" href="https://aidepot.renjie.store" target="_blank" rel="noopener">打开站点 ↗</a>
-          <span class="link" style="color:var(--muted);border-bottom-color:var(--line);cursor:default">需求清单 · 仅现场演示</span>
-        </div>
-      </div>
-      <div class="case-right">
-        <div class="phase">
-          <div class="phase-label">一期</div>
-          <div class="phase-main"><span class="big">5</span> 块</div>
-          <p>10,891 行（含测试）</p>
-        </div>
-        <div class="phase">
-          <div class="phase-label">二期</div>
-          <div class="phase-main"><span class="big">6</span> 块</div>
-          <p>又加 1.2 万行 · 全站 500+ 测试全绿</p>
-        </div>
-        <div class="case-total"><span class="big">≈2.3万</span><span>行（含测试）· 代码 2 小时 · 测试 40 分钟</span></div>
-        <div class="case-note">我给的是一个任务，不是功能清单；回答了 AI 问我的几个问题。分两个晚上跑完。</div>
-      </div>
-    </div>
-    <div class="pullquote">第一次交付，证明它<em>能写</em>；第二次迭代，证明它<em>能改</em>。</div>
-    <div class="notes" data-time="1:20">
-      <p>这是真实案例：AI 补给站，一个内部学习分享站。起点就是这 12 行需求，我没写 PRD，也没画架构。我给的是一个任务，不是功能清单；回答了 AI 问我的几个问题。</p>
-      <p>一期 5 块，10,891 行；二期在已有代码上加 6 块，又加了 1.2 万行。两期合计约 2.3 万行。代码跑了 2 小时，自动化测试 40 分钟。分两个晚上跑完。</p>
-      <p>链接在这里：站点和需求清单。如果有时间，我可以点开给大家看。</p>
-    </div>
-  </section>
-
-  <!-- 10 -->
-  <section class="slide" data-title="为什么好改：契约就是拼图的形状">
-    <div class="slide-head"><span class="section-label">04 / 为什么好改</span><span class="page-num">10 / 13</span></div>
+<section class="slide" data-title="为什么好改：契约就是拼图的形状">
+    <div class="slide-head"><span class="section-label">04 / 为什么好改</span><span class="page-num">9 / 14</span></div>
     <h2>为什么好改：契约就是拼图的形状</h2>
     <div class="puzzle-layout">
       <div class="puzzle-copy">
@@ -734,9 +708,9 @@
     </div>
   </section>
 
-  <!-- 11 -->
-  <section class="slide" data-title="第二次改造：功能清单 + 上一次的契约">
-    <div class="slide-head"><span class="section-label">04 / 第二次改造</span><span class="page-num">11 / 13</span></div>
+  <!-- 10 -->
+<section class="slide" data-title="第二次改造：功能清单 + 上一次的契约">
+    <div class="slide-head"><span class="section-label">04 / 为什么好加</span><span class="page-num">10 / 14</span></div>
     <h2>第二次改造，只给功能清单 + 上一次的契约</h2>
     <div class="iter-layout">
       <div class="iter-copy">
@@ -794,9 +768,113 @@
     </div>
   </section>
 
+  <!-- 11 -->
+<section class="slide" data-title="案例：12 行到 2.3 万行">
+    <div class="slide-head"><span class="section-label">05 / 真实案例</span><span class="page-num">11 / 14</span></div>
+    <h2>一个真实的内部站点：AI 补给站</h2>
+    <div class="case-layout">
+      <div class="case-left">
+        <div class="mono" style="font-size:11px;letter-spacing:.14em;color:var(--muted);margin-bottom:2px">起点 · 12 行功能清单</div>
+        <div class="feature-list">
+          <div class="feature"><div class="n">01</div><div><div class="t">学习路径课程</div><div class="d">选课、里程碑、称号、评分</div></div></div>
+          <div class="feature"><div class="n">02</div><div><div class="t">技能分享社区</div><div class="d">上传、下载、评论、点赞、收藏</div></div></div>
+          <div class="feature"><div class="n">03</div><div><div class="t">管理后台</div><div class="d">上架、下架、取数、轮播</div></div></div>
+          <div class="feature"><div class="n">04</div><div><div class="t">管理 API</div><div class="d">让 Agent 拉取、修改、上传</div></div></div>
+          <div class="feature"><div class="n">05</div><div><div class="t">习题库</div><div class="d">随机刷题、错题本、收藏</div></div></div>
+          <div class="feature"><div class="n">06</div><div><div class="t">首页与个人页</div><div class="d">信息流、搜索、学习数据、勋章</div></div></div>
+        </div>
+        <div class="feature-more">… 共 12 条，来自 3 位同事</div>
+        <div class="case-links">
+          <a class="link" href="https://aidepot.renjie.store" target="_blank" rel="noopener">打开站点 ↗</a>
+          <span class="link" style="color:var(--muted);border-bottom-color:var(--line);cursor:default">打开功能清单 · 仅现场演示</span>
+        </div>
+      </div>
+      <div class="case-right">
+        <div class="phase">
+          <div class="phase-label">一期</div>
+          <div class="phase-main"><span class="big">5</span> 块</div>
+          <p>10,891 行（含测试）</p>
+        </div>
+        <div class="phase">
+          <div class="phase-label">二期</div>
+          <div class="phase-main"><span class="big">6</span> 块</div>
+          <p>又加 1.2 万行 · 全站 500+ 测试全绿</p>
+        </div>
+        <div class="case-total"><span class="big">≈2.3万</span><span>行（含测试）· 代码 2 小时 · 测试 40 分钟</span></div>
+        <div class="case-note">我只给了一份 12 行功能清单，不是 PRD；回答了 AI 问我的几个问题。分两个晚上跑完。</div>
+      </div>
+    </div>
+    <div class="pullquote">第一次交付，证明它<em>能写</em>；第二次迭代，证明它<em>能改</em>。</div>
+    <div class="notes" data-time="1:10">
+      <p>这是真实案例：AI 补给站，一个内部学习分享站。起点就是这 12 行功能清单，我没写 PRD，也没画架构。我只给了一份清单，回答了 AI 问我的几个问题。</p>
+      <p>一期 5 块，10,891 行；二期在已有代码上加 6 块，又加了 1.2 万行。两期合计约 2.3 万行。代码跑了 2 小时，自动化测试 40 分钟。分两个晚上跑完。</p>
+      <p>链接在这里：站点和功能清单。如果有时间，我可以点开给大家看。</p>
+    </div>
+  </section>
+
   <!-- 12 -->
-  <section class="slide" data-title="验收：AI 自己当用户">
-    <div class="slide-head"><span class="section-label">04 / 验收</span><span class="page-num">12 / 13</span></div>
+<section class="slide" data-title="具体流程：从功能清单到用户验收">
+    <div class="slide-head"><span class="section-label">05 / 怎么干</span><span class="page-num">12 / 14</span></div>
+    <h2>我具体是怎么干的</h2>
+    <div class="workflow-layout">
+      <div class="wf-steps">
+        <div class="wf-step">
+          <div class="n">01</div>
+          <div><h3>给功能清单</h3><p>不写 PRD，不画架构。12 行，说清要什么、给谁用。</p></div>
+          <div class="who"><strong>你</strong>提需求</div>
+        </div>
+        <div class="wf-step">
+          <div class="n">02</div>
+          <div><h3>让我的 AI 出 PRD</h3><p>它读懂清单，反问我几个问题，产出一份完整设计。</p></div>
+          <div class="who"><strong>你的 AI</strong>设计</div>
+        </div>
+        <div class="wf-step">
+          <div class="n">03</div>
+          <div><h3>把设计交给施工队</h3><p>Planner 拆块写契约，Executor 照单施工，Auditor 独立审。</p></div>
+          <div class="who"><strong>AutoKnit</strong>施工</div>
+        </div>
+        <div class="wf-step">
+          <div class="n">04</div>
+          <div><h3>让我的 AI 验收</h3><p>按契约核对；不通过就打回重做，不是从头再来。</p></div>
+          <div class="who"><strong>你的 AI</strong>验收</div>
+        </div>
+        <div class="wf-step">
+          <div class="n">05</div>
+          <div><h3>我作为用户验收</h3><p>再生成一份用例清单，让它操作电脑，打开真实站点逐条点。</p></div>
+          <div class="who"><strong>你</strong>终验</div>
+        </div>
+      </div>
+      <aside class="wf-artifacts">
+        <div class="artifact">
+          <div class="mono">ARTIFACT 01 · 需求</div>
+          <h3>功能清单</h3>
+          <p>12 行，来自 3 位同事；起点只有这些。</p>
+          <span class="link" style="color:var(--muted);border-bottom-color:var(--line);cursor:default">打开功能清单 · 仅现场演示</span>
+        </div>
+        <div class="artifact">
+          <div class="mono">ARTIFACT 02 · 验收</div>
+          <h3>验收用例</h3>
+          <p>116 条，5 轮收敛；115 条通过、1 条未测。</p>
+          <span class="link" style="color:var(--muted);border-bottom-color:var(--line);cursor:default">打开验收用例 · 仅现场演示</span>
+        </div>
+        <div class="artifact result">
+          <div class="mono">RESULT · 两个晚上</div>
+          <h3>2h → 23,000 行</h3>
+          <p>40 分钟跑完 116 条用例，交付一个能用的站点。</p>
+        </div>
+      </aside>
+    </div>
+    <div class="pullquote">我只做两头：<em>提需求、验收</em>；中间四棒，它自己跑。</div>
+    <div class="notes" data-time="1:10">
+      <p>具体我是怎么干的？第一步，给功能清单，不写 PRD，也不画架构；链接在这里，就 12 行。第二步，让我的 AI 出 PRD：它读懂清单，反问我几个问题，产出一份完整设计。</p>
+      <p>第三步，把设计交给工具，也就是施工队：Planner 拆块写契约，Executor 照单施工，Auditor 独立审。第四步，完成的块先由我的 AI 按契约验收，不通过就打回。</p>
+      <p>第五步，我作为用户验收：再生成一份用例清单，让它操作我的电脑，打开真实站点一条条点；用例链接也在这里。我只做两头，中间它自己跑。</p>
+    </div>
+  </section>
+
+  <!-- 13 -->
+<section class="slide" data-title="验收：AI 自己当用户">
+    <div class="slide-head"><span class="section-label">05 / 验收</span><span class="page-num">13 / 14</span></div>
     <h2>交付前，它自己先当了一回用户</h2>
     <div class="accept-layout">
       <div class="accept-left">
@@ -822,25 +900,25 @@
         </div>
         <div class="accept-foot">验收员置信度不够，会转人工——它不装懂。</div>
         <div class="accept-link">
-          <span class="link" style="color:var(--muted);border-bottom-color:var(--line);cursor:default">验收台账 · 仅现场演示</span>
+          <span class="link" style="color:var(--muted);border-bottom-color:var(--line);cursor:default">打开验收台账 · 仅现场演示</span>
         </div>
       </div>
     </div>
     <div class="pullquote">不是“AI 说好了”，是<em>“用例跑过了”</em>。</div>
-    <div class="notes" data-time="1:10">
+    <div class="notes" data-time="1:00">
       <p>跑完不算完。我让它生成一份验收用例清单，然后让它操作我的电脑，打开真实站点，一条条点。40 分钟，116 条用例，5 轮收敛，115 条通过，1 条未测。</p>
       <p>不是“AI 说好了”，是“用例跑过了”。验收员置信度不够会转人工，它不装懂。台账链接在这里，有时间可以点开看。</p>
     </div>
   </section>
 
-  <!-- 13 -->
-  <section class="slide" data-title="我做了什么，得到了什么">
-    <div class="slide-head"><span class="section-label">05 / 收尾</span><span class="page-num">13 / 13</span></div>
+  <!-- 14 -->
+<section class="slide" data-title="我做了什么，得到了什么">
+    <div class="slide-head"><span class="section-label">06 / 收尾</span><span class="page-num">14 / 14</span></div>
     <h2>我做了什么，得到了什么</h2>
     <div class="what-grid">
       <div class="what-col">
         <h3>我做了什么</h3>
-        <div class="what-item"><div class="n">01</div><p>给了一个任务，不是一份功能清单。</p></div>
+        <div class="what-item"><div class="n">01</div><p>给了一份 12 行功能清单，不是 PRD。</p></div>
         <div class="what-item"><div class="n">02</div><p>回答了 AI 问我的几个问题。</p></div>
         <div class="what-item"><div class="n">03</div><p>只在审美上提了一些要求。</p></div>
       </div>
@@ -864,12 +942,11 @@
       <span>包已打好，开箱即用 · 用约 1/30 的模型成本跑完 · 想试的会后找我</span>
       <span class="mono">边界：几十行的小脚本 / 纯审美微调 / 部署上线，别用它</span>
     </div>
-    <div class="notes" data-time="1:05">
-      <p>最后，回到我做了什么、得到了什么。我做三件事：给一个任务，不是功能清单；回答 AI 的几个问题；只在审美上提要求。得到的是：2 小时、23,000 行代码、直接交付；40 分钟自动跑完 116 条用例；一个能用的站点。</p>
+    <div class="notes" data-time="1:00">
+      <p>最后，回到我做了什么、得到了什么。我做三件事：给一份 12 行功能清单，不是 PRD；回答 AI 的几个问题；只在审美上提要求。得到的是：2 小时、23,000 行代码、直接交付；40 分钟自动跑完 116 条用例；一个能用的站点。</p>
       <p>带走三句话：先图纸，后代码；先定接口，再分工；别让写代码的 AI 自己判卷。AI 能写到什么份上，取决于你给它什么样的工程约束。包已经打好了，想试的会后找我。</p>
     </div>
   </section>
-
 </div>
 
 <div id="hud">
