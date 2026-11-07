@@ -228,6 +228,39 @@
   .iter-figure{margin:0}
   .iter-figure svg{display:block;width:100%;height:auto}
 
+  /* house animation page */
+  .ha-stage{margin-top:4px}
+  .ha-stage svg{display:block;width:100%;height:auto}
+  .ha-ctrl{display:flex;align-items:center;gap:14px;margin-top:8px}
+  .ha-btn{width:42px;height:42px;border:1px solid var(--line);background:#fff;font-size:15px;cursor:pointer;color:var(--ink);flex:0 0 auto}
+  .ha-btn:hover{border-color:var(--teal);color:var(--teal)}
+  .ha-bar{position:relative;flex:1;height:6px;background:var(--line-2);cursor:pointer}
+  .ha-fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--teal)}
+  .ha-knob{position:absolute;top:50%;left:0;width:14px;height:14px;border-radius:50%;background:var(--teal);transform:translate(-50%,-50%);box-shadow:0 1px 4px rgba(23,22,20,.25)}
+  .ha-time{font-family:var(--mono);font-size:11px;color:var(--muted);min-width:96px;text-align:right}
+  .ha-hint{display:none;margin-top:10px;font-size:13px;color:var(--muted)}
+  body.print .ha-ctrl{display:none!important}
+  body.print .ha-hint{display:block!important}
+  .ha-stage [data-fx]{opacity:0}
+  .ha-stage [data-fx]{transform-box:view-box}
+  .ha-svg text{font-family:var(--sans);fill:var(--ink)}
+  .ha-sec{font-family:var(--mono);font-size:17px;letter-spacing:.12em;fill:var(--teal);font-weight:600}
+  .ha-av{font-size:11px;font-weight:600}
+  .ha-msg{font-size:15px}
+  .ha-cardtitle{font-family:var(--serif);font-size:19px;font-weight:600}
+  .ha-li{font-size:12.5px;line-height:1.5}
+  .ha-tasknum{font-family:var(--mono);font-size:10px;fill:var(--teal)}
+  .ha-task{font-family:var(--serif);font-size:19px;font-weight:600}
+  .ha-tasksub{font-size:9.5px;fill:var(--muted)}
+  .ha-contracttitle{font-family:var(--serif);font-size:17px;font-weight:600;fill:#b4441c}
+  .ha-contract{font-size:12.5px}
+  .ha-86{font-family:var(--mono);font-size:9px;fill:var(--muted)}
+  .ha-role{font-size:10px;fill:var(--muted)}
+  .ha-person line{stroke:#171614;stroke-width:2.4;stroke-linecap:round}
+  .ha-person circle{stroke:#171614;stroke-width:1.5}
+  .ha-banner{font-family:var(--serif);font-size:22px;font-weight:600}
+  .ha-note{font-size:12.5px;fill:var(--muted)}
+
   /* workflow */
   .workflow-layout{display:grid;grid-template-columns:1.4fr .6fr;gap:54px;flex:1;min-height:0}
   .wf-steps{display:flex;flex-direction:column;justify-content:space-between;border-top:1px solid var(--line);min-height:0}
@@ -404,7 +437,7 @@
 
   <!-- 02 -->
 <section class="slide" data-title="痛点：三个崩法">
-    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">2 / 14</span></div>
+    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">2 / 15</span></div>
     <h2>AI 写代码，为什么总是后半段崩</h2>
     <div class="pain-grid">
       <div class="pain" style="--d:.0s">
@@ -427,7 +460,7 @@
       </div>
     </div>
     <div class="pullquote">小 demo 很爽；稍微大一点，就开始<em>来回拉扯</em>。</div>
-    <div class="notes" data-time="1:05">
+    <div class="notes" data-time="1:00">
       <p>先对个号。有没有人用 AI 写过东西？写过超过 500 行的，举个手。……很少，对吧。</p>
       <p>不是你们不行，是这件事本身有个坎。三个崩法：第一，越写越偏，聊到后面它忘了前面的约定；第二，它说“完成了”，你一跑就报错，因为它只对“我写了”负责，不对“你能用”负责；第三，改 A 炸 B，没有边界，一坨代码牵一发动全身。</p>
       <p>小 demo 很爽，一到真要用，就开始拉扯。</p>
@@ -436,7 +469,7 @@
 
   <!-- 03 -->
 <section class="slide" data-title="聊天死循环">
-    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">3 / 14</span></div>
+    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">3 / 15</span></div>
     <h2>你一定见过的循环</h2>
     <div class="chat-layout">
       <div class="chat">
@@ -466,7 +499,7 @@
 
   <!-- 04 -->
 <section class="slide" data-title="根因：缺工程纪律">
-    <div class="slide-head"><span class="section-label">02 / 根因</span><span class="page-num">4 / 14</span></div>
+    <div class="slide-head"><span class="section-label">02 / 根因</span><span class="page-num">4 / 15</span></div>
     <h2>他缺的是工程纪律。</h2>
     <p class="root-lede">许愿式编程很火：你可以跟一个木工说“给我打一把漂亮的椅子”，他能做到。<br>但你不可能跟他说“帮我把整个家装修一遍”。</p>
     <div class="split-visual">
@@ -507,7 +540,7 @@
       </div>
     </div>
     <div class="pullquote">AI 缺的不是智商，是<em>这支队伍</em>。</div>
-    <div class="notes" data-time="1:10">
+    <div class="notes" data-time="1:05">
       <p>所以根因不是模型，是缺工程纪律。许愿式编程很火：你可以跟一个木工说“给我打一把漂亮的椅子”，他能做到。但你不可能跟他说“帮我把整个家装修一遍”。</p>
       <p>一个家，需要的是一支纪律严明的装修队：有设计师、有项目经理、有图纸、有施工、有监理。AI 也一样。它缺的不是智商，是这支队伍。</p>
     </div>
@@ -515,7 +548,7 @@
 
   <!-- 05 -->
 <section class="slide" data-title="工程队：五个角色">
-    <div class="slide-head"><span class="section-label">02 / 根因 · 工程队</span><span class="page-num">5 / 14</span></div>
+    <div class="slide-head"><span class="section-label">02 / 根因 · 工程队</span><span class="page-num">5 / 15</span></div>
     <h2>一支装修队，是怎么把一个家装完的</h2>
     <div class="crew-flow">
       <div class="crew-node" style="--d:.0s">
@@ -550,7 +583,7 @@
       </div>
     </div>
     <div class="crew-foot">一个人可以打一把椅子；一个家，需要这五棒接力。少一棒，就会在某个环节塌。</div>
-    <div class="notes" data-time="1:05">
+    <div class="notes" data-time="1:00">
       <p>这支队伍有五棒：总设计师听需求；项目经理把需求拆成任务清单、给纪律；图纸把“怎么做”画清楚；施工人员照着清单交付；监理对着清单审计。</p>
       <p>注意，图纸不是装饰，是合同：接口、边界、验收标准都在上面。少了监理，施工人员就会自己说“我做好了”。</p>
     </div>
@@ -558,7 +591,7 @@
 
   <!-- 06 -->
 <section class="slide" data-title="AI 分工：五个角色">
-    <div class="slide-head"><span class="section-label">03 / 它是什么</span><span class="page-num">6 / 14</span></div>
+    <div class="slide-head"><span class="section-label">03 / 它是什么</span><span class="page-num">6 / 15</span></div>
     <h2>这套班子，搬进 AI 里</h2>
     <div class="crew-flow">
       <div class="crew-node" style="--d:.0s">
@@ -593,7 +626,7 @@
       </div>
     </div>
     <div class="crew-foot">你只出现在两头：提需求、验收。中间四棒，AI 自己跑。</div>
-    <div class="notes" data-time="1:05">
+    <div class="notes" data-time="1:00">
       <p>搬进 AI 里，就是这五个角色：你提需求；你的 AI 是总设计师，问清问题、产出完整设计；Planner 把设计消化成分工、任务清单和契约；Executor 照着清单写；Auditor 对着清单跑测试。</p>
       <p>你只出现在两头：提需求、验收。中间四棒，AI 自己跑。这就是为什么你能“说一句话，然后去干别的”。</p>
     </div>
@@ -601,7 +634,7 @@
 
   <!-- 07 -->
 <section class="slide" data-title="流水线：五个动作">
-    <div class="slide-head"><span class="section-label">03 / 它是什么</span><span class="page-num">7 / 14</span></div>
+    <div class="slide-head"><span class="section-label">03 / 它是什么</span><span class="page-num">7 / 15</span></div>
     <h2>一条流水线，五个动作</h2>
     <div class="pipeline-layout">
       <div class="pipeline">
@@ -617,15 +650,234 @@
         <figcaption>任务看板实拍 · 点击放大 · 每块的状态、token、积分、打回都在这</figcaption>
       </figure>
     </div>
-    <div class="notes" data-time="1:05">
+    <div class="notes" data-time="0:50">
       <p>具体跑起来是五步：需求、设计、拆解、施工、验收。设计是你的 AI 做的；拆解是 Planner 做的；施工是 Executor 按清单写；验收是 Auditor 跑测试。不过就打回，不是从头再来。</p>
       <p>你看这张看板：哪块在跑、哪块被打回、每块花了多少 token、多少积分，一目了然。调度是程序做的，不烧 token。</p>
     </div>
   </section>
 
   <!-- 08 -->
+<section class="slide anim-page" data-title="动画：盖一座房子">
+    <div class="slide-head"><span class="section-label">03 / 它是什么 · 动画</span><span class="page-num">8 / 15</span></div>
+    <h2>看一遍全流程：盖一座房子</h2>
+    <div class="ha-stage">
+      <svg class="ha-svg" viewBox="0 0 1440 470" role="img" aria-label="盖房子动画：需求→清单→任务+契约→施工→交付">
+        <!-- 静态：地面 -->
+        <line x1="470" y1="410" x2="1420" y2="410" stroke="#d8d2c6" stroke-width="2"/>
+        <!-- 幕标题 -->
+        <text class="ha-sec" data-fx="fade" data-t0="0.2" data-t1="0.7" data-out0="6.6" data-out1="7.0" x="478" y="34">① 需求沟通</text>
+        <text class="ha-sec" data-fx="fade" data-t0="7.0" data-t1="7.6" data-out0="11.6" data-out1="12.0" x="478" y="34">② 清单 → 任务 + 契约</text>
+        <text class="ha-sec" data-fx="fade" data-t0="12.0" data-t1="12.6" data-out0="24.6" data-out1="25.0" x="478" y="34">③ 按契约施工</text>
+        <text class="ha-sec" data-fx="fade" data-t0="25.0" data-t1="25.6" x="478" y="34">④ 交付</text>
+
+        <!-- 左侧：聊天流 -->
+        <circle cx="34" cy="46" r="13" fill="#fff" stroke="#0F6B5C" stroke-width="1.5"/>
+        <text x="34" y="50" text-anchor="middle" class="ha-av" fill="#0F6B5C">你</text>
+        <g data-fx="fade" data-t0="0.4" data-t1="1.0">
+          <rect x="58" y="24" width="308" height="58" rx="8" fill="#fff" stroke="#d8d2c6"/>
+          <text x="74" y="48" class="ha-msg">给我盖一套</text>
+          <text x="74" y="70" class="ha-msg">三室两厅两卫的房子。</text>
+        </g>
+        <circle cx="34" cy="118" r="13" fill="#fff" stroke="#b4441c" stroke-width="1.5"/>
+        <text x="34" y="122" text-anchor="middle" class="ha-av" fill="#b4441c">设</text>
+        <g data-fx="fade" data-t0="2.2" data-t1="2.8">
+          <rect x="58" y="96" width="300" height="58" rx="8" fill="#fff" stroke="#d8d2c6"/>
+          <text x="74" y="120" class="ha-msg">现代风？要不要二层？</text>
+          <text x="74" y="142" class="ha-msg">带院子吗？</text>
+        </g>
+        <circle cx="34" cy="182" r="13" fill="#fff" stroke="#0F6B5C" stroke-width="1.5"/>
+        <text x="34" y="186" text-anchor="middle" class="ha-av" fill="#0F6B5C">你</text>
+        <g data-fx="fade" data-t0="3.8" data-t1="4.4">
+          <rect x="58" y="160" width="252" height="52" rx="8" fill="#fff" stroke="#d8d2c6"/>
+          <text x="74" y="192" class="ha-msg">现代风，要二层，带院子。</text>
+        </g>
+
+        <!-- 需求清单（会飞向项目经理） -->
+        <g id="ha-checklist" data-fx="fade" data-t0="5.4" data-t1="6.2">
+          <rect x="58" y="226" width="332" height="222" rx="10" fill="#fff" stroke="#171614" stroke-width="1.5"/>
+          <rect x="58" y="226" width="6" height="222" fill="#0F6B5C"/>
+          <text x="78" y="258" class="ha-cardtitle">需求清单</text>
+          <text x="78" y="284" class="ha-li">三室两厅两卫 · 现代风</text>
+          <text x="78" y="306" class="ha-li">两层 + 带院子</text>
+          <text x="78" y="328" class="ha-li">客厅朝南 · 大窗</text>
+          <text x="78" y="350" class="ha-li">主卧带独立卫浴</text>
+          <text x="78" y="372" class="ha-li">地砖暖灰 · 白墙</text>
+          <text x="78" y="394" class="ha-li">厨房连餐厅</text>
+          <text x="78" y="424" class="ha-li" fill="#7A746A">—— 沟通确认后，一份清单定下来</text>
+        </g>
+
+        <!-- 项目经理 -->
+        <g class="ha-person" data-fx="fade" data-t0="7.2" data-t1="7.8" transform="translate(490,350)">
+          <line x1="0" y1="20" x2="0" y2="40"/><line x1="-7" y1="30" x2="0" y2="23"/><line x1="7" y1="30" x2="0" y2="23"/>
+          <line x1="0" y1="40" x2="-6" y2="54"/><line x1="0" y1="40" x2="6" y2="54"/>
+          <circle cx="0" cy="10" r="9" fill="#fff"/>
+          <path d="M-8,6 A8,8 0 0 1 8,6 Z" fill="#b4441c"/>
+          <text x="0" y="70" text-anchor="middle" class="ha-role">项目经理</text>
+        </g>
+
+        <!-- 清单交给项目经理 -->
+        <g data-fx="fade" data-t0="7.4" data-t1="8.0">
+          <line x1="392" y1="337" x2="452" y2="337" stroke="#0F6B5C" stroke-width="2" stroke-dasharray="5 4"/>
+          <polygon points="452,332 464,337 452,342" fill="#0F6B5C"/>
+        </g>
+        <!-- 任务卡 ×4（竖排） -->
+        <g data-fx="fade" data-t0="8.3" data-t1="8.8">
+          <rect x="460" y="60" width="150" height="56" rx="6" fill="#fff" stroke="#171614" stroke-width="1.2"/>
+          <text x="474" y="84" class="ha-tasknum">01</text><text x="502" y="84" class="ha-task">地基</text>
+          <text x="474" y="104" class="ha-tasksub">照契约施工</text>
+        </g>
+        <g data-fx="fade" data-t0="8.9" data-t1="9.4">
+          <rect x="460" y="124" width="150" height="56" rx="6" fill="#fff" stroke="#171614" stroke-width="1.2"/>
+          <text x="474" y="148" class="ha-tasknum">02</text><text x="502" y="148" class="ha-task">水电</text>
+          <text x="474" y="168" class="ha-tasksub">照契约施工</text>
+        </g>
+        <g data-fx="fade" data-t0="9.5" data-t1="10.0">
+          <rect x="460" y="188" width="150" height="56" rx="6" fill="#fff" stroke="#171614" stroke-width="1.2"/>
+          <text x="474" y="212" class="ha-tasknum">03</text><text x="502" y="212" class="ha-task">砌墙</text>
+          <text x="474" y="232" class="ha-tasksub">活太大 · 招小工</text>
+        </g>
+        <g data-fx="fade" data-t0="10.1" data-t1="10.6">
+          <rect x="460" y="252" width="150" height="56" rx="6" fill="#fff" stroke="#171614" stroke-width="1.2"/>
+          <text x="474" y="276" class="ha-tasknum">04</text><text x="502" y="276" class="ha-task">装修</text>
+          <text x="474" y="296" class="ha-tasksub">照契约施工</text>
+        </g>
+        <!-- ✓ 领契约 -->
+        <g data-fx="fade" data-t0="11.5" data-t1="12.0" class="ha-badges">
+          <g transform="translate(592,76)"><circle r="8" fill="#0F6B5C"/><path d="M-3.5,0 L-1,3 L4,-3" stroke="#fff" stroke-width="1.8" fill="none"/></g>
+          <g transform="translate(592,140)"><circle r="8" fill="#0F6B5C"/><path d="M-3.5,0 L-1,3 L4,-3" stroke="#fff" stroke-width="1.8" fill="none"/></g>
+          <g transform="translate(592,204)"><circle r="8" fill="#0F6B5C"/><path d="M-3.5,0 L-1,3 L4,-3" stroke="#fff" stroke-width="1.8" fill="none"/></g>
+          <g transform="translate(592,268)"><circle r="8" fill="#0F6B5C"/><path d="M-3.5,0 L-1,3 L4,-3" stroke="#fff" stroke-width="1.8" fill="none"/></g>
+        </g>
+
+        <!-- 契约卡 -->
+        <g data-fx="fade" data-t0="10.7" data-t1="11.5">
+          <rect x="1090" y="16" width="330" height="158" rx="10" fill="#fff" stroke="#b4441c" stroke-width="2" stroke-dasharray="7 4"/>
+          <text x="1108" y="46" class="ha-contracttitle">契约 · 所有人遵守</text>
+          <text x="1108" y="74" class="ha-contract">① 入户电 220V / 50Hz</text>
+          <text x="1108" y="98" class="ha-contract">② 开关面板 86 型 —— 谁家的都能装</text>
+          <text x="1108" y="122" class="ha-contract">③ 冷热水管间距 15cm · 左热右冷</text>
+          <text x="1108" y="146" class="ha-contract">④ 承重墙不许动（以图纸为准）</text>
+          <text x="1108" y="166" class="ha-contract" fill="#b4441c">接口对上，谁都能接活</text>
+        </g>
+
+        <!-- 房子：结构层 -->
+        <g data-fx="fade" data-t0="13.6" data-t1="14.4" data-p="0.45">
+          <rect x="680" y="298" width="380" height="8" fill="none" stroke="#171614" stroke-width="1.5"/>
+          <line x1="780" y1="306" x2="780" y2="394" stroke="#171614" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="870" y1="202" x2="870" y2="298" stroke="#171614" stroke-width="1" stroke-dasharray="4 4"/>
+          <path d="M650,202 L900,126 L1150,202" fill="none" stroke="#171614" stroke-width="1.5"/>
+        </g>
+        <rect data-fx="growx" data-t0="12.4" data-t1="14.4" x="660" y="394" width="420" height="16" fill="#8a8578" style="transform-origin:660px 402px"/>
+        <rect data-fx="growy" data-t0="16.8" data-t1="19.2" x="680" y="306" width="380" height="88" fill="#f3ead9" stroke="#171614" stroke-width="1.5" style="transform-origin:680px 394px"/>
+        <rect data-fx="growy" data-t0="19.4" data-t1="21.4" x="680" y="202" width="380" height="96" fill="#f3ead9" stroke="#171614" stroke-width="1.5" style="transform-origin:680px 298px"/>
+        <!-- 水电管线 -->
+        <path data-fx="dash" data-t0="14.4" data-t1="15.9" d="M688,392 V214 H758" fill="none" stroke="#4a90c2" stroke-width="3"/>
+        <path data-fx="dash" data-t0="15.3" data-t1="16.8" d="M1052,392 V214 H996" fill="none" stroke="#c25a3a" stroke-width="3"/>
+        <g data-fx="fade" data-t0="16.3" data-t1="16.9">
+          <rect x="686" y="376" width="18" height="18" fill="#fff" stroke="#171614" stroke-width="1.2"/>
+          <text x="695" y="389" text-anchor="middle" class="ha-86">86</text>
+        </g>
+        <!-- 装修层 -->
+        <path data-fx="rise" data-t0="21.6" data-t1="22.6" d="M650,202 L900,126 L1150,202 Z" fill="rgba(180,68,28,.16)" stroke="#b4441c" stroke-width="2"/>
+        <g data-fx="fade" data-t0="22.4" data-t1="23.2">
+          <rect x="844" y="352" width="52" height="42" fill="#8a6a4f"/>
+          <path d="M844,352 A26,26 0 0 1 896,352" fill="none" stroke="#8a6a4f" stroke-width="2"/>
+          <g fill="#fff" stroke="#171614" stroke-width="1.4">
+            <rect x="700" y="322" width="64" height="44"/><rect x="966" y="322" width="64" height="44"/>
+            <rect x="700" y="222" width="64" height="44"/><rect x="966" y="222" width="64" height="44"/>
+          </g>
+          <g stroke="#171614" stroke-width="1">
+            <line x1="731" y1="322" x2="731" y2="366"/><line x1="700" y1="344" x2="762" y2="344"/>
+            <line x1="997" y1="322" x2="997" y2="366"/><line x1="966" y1="344" x2="1028" y2="344"/>
+            <line x1="731" y1="222" x2="731" y2="266"/><line x1="700" y1="244" x2="762" y2="244"/>
+            <line x1="997" y1="222" x2="997" y2="266"/><line x1="966" y1="244" x2="1028" y2="244"/>
+          </g>
+        </g>
+        <g data-fx="rise" data-t0="23.0" data-t1="24.0">
+          <g stroke="#8a8578" stroke-width="2.4">
+            <line x1="1180" y1="378" x2="1180" y2="410"/><line x1="1207" y1="378" x2="1207" y2="410"/><line x1="1234" y1="378" x2="1234" y2="410"/><line x1="1261" y1="378" x2="1261" y2="410"/><line x1="1288" y1="378" x2="1288" y2="410"/><line x1="1315" y1="378" x2="1315" y2="410"/><line x1="1342" y1="378" x2="1342" y2="410"/><line x1="1369" y1="378" x2="1369" y2="410"/><line x1="1396" y1="378" x2="1396" y2="410"/>
+            <line x1="1176" y1="384" x2="1400" y2="384"/><line x1="1176" y1="398" x2="1400" y2="398"/>
+          </g>
+          <rect x="1338" y="366" width="8" height="44" fill="#8a6a4f"/>
+          <circle cx="1342" cy="348" r="24" fill="rgba(44,139,121,.2)" stroke="#0F6B5C" stroke-width="1.5"/>
+        </g>
+        <!-- 旗子 -->
+        <g data-fx="rise" data-t0="26.0" data-t1="26.8">
+          <line x1="900" y1="126" x2="900" y2="94" stroke="#171614" stroke-width="2"/>
+          <path d="M900,94 L932,101 L900,108 Z" fill="#0F6B5C"/>
+        </g>
+
+        <!-- 工人 -->
+        <g class="ha-person" data-fx="fade" data-t0="12.2" data-t1="12.7" transform="translate(570,350)">
+          <line x1="0" y1="20" x2="0" y2="40"/><line x1="-7" y1="30" x2="0" y2="23"/><line x1="7" y1="30" x2="0" y2="23"/>
+          <line x1="0" y1="40" x2="-6" y2="54"/><line x1="0" y1="40" x2="6" y2="54"/>
+          <circle cx="0" cy="10" r="9" fill="#fff"/><path d="M-8,6 A8,8 0 0 1 8,6 Z" fill="#c9a227"/>
+          <text x="0" y="70" text-anchor="middle" class="ha-role">地基</text>
+        </g>
+        <g class="ha-person" data-fx="fade" data-t0="14.0" data-t1="14.5" transform="translate(628,350)">
+          <line x1="0" y1="20" x2="0" y2="40"/><line x1="-7" y1="30" x2="0" y2="23"/><line x1="7" y1="30" x2="0" y2="23"/>
+          <line x1="0" y1="40" x2="-6" y2="54"/><line x1="0" y1="40" x2="6" y2="54"/>
+          <circle cx="0" cy="10" r="9" fill="#fff"/><path d="M-8,6 A8,8 0 0 1 8,6 Z" fill="#4a90c2"/>
+          <text x="0" y="70" text-anchor="middle" class="ha-role">水电</text>
+        </g>
+        <g class="ha-person" data-fx="fade" data-t0="16.5" data-t1="17.0" transform="translate(730,350)">
+          <line x1="0" y1="20" x2="0" y2="40"/><line x1="-7" y1="30" x2="0" y2="23"/><line x1="7" y1="30" x2="0" y2="23"/>
+          <line x1="0" y1="40" x2="-6" y2="54"/><line x1="0" y1="40" x2="6" y2="54"/>
+          <circle cx="0" cy="10" r="9" fill="#fff"/><path d="M-8,6 A8,8 0 0 1 8,6 Z" fill="#c9a227"/>
+          <text x="0" y="70" text-anchor="middle" class="ha-role">砌墙</text>
+        </g>
+        <g class="ha-person" data-fx="fade" data-t0="18.4" data-t1="19.0" transform="translate(788,350)">
+          <line x1="0" y1="20" x2="0" y2="40"/><line x1="-7" y1="30" x2="0" y2="23"/><line x1="7" y1="30" x2="0" y2="23"/>
+          <line x1="0" y1="40" x2="-6" y2="54"/><line x1="0" y1="40" x2="6" y2="54"/>
+          <circle cx="0" cy="10" r="9" fill="#fff"/><path d="M-8,6 A8,8 0 0 1 8,6 Z" fill="#2C8B79"/>
+          <text x="0" y="70" text-anchor="middle" class="ha-role">小工</text>
+        </g>
+        <g class="ha-person" data-fx="fade" data-t0="21.2" data-t1="21.7" transform="translate(1160,350)">
+          <line x1="0" y1="20" x2="0" y2="40"/><line x1="-7" y1="30" x2="0" y2="23"/><line x1="7" y1="30" x2="0" y2="23"/>
+          <line x1="0" y1="40" x2="-6" y2="54"/><line x1="0" y1="40" x2="6" y2="54"/>
+          <circle cx="0" cy="10" r="9" fill="#fff"/><path d="M-8,6 A8,8 0 0 1 8,6 Z" fill="#b4441c"/>
+          <text x="0" y="70" text-anchor="middle" class="ha-role">装修</text>
+        </g>
+        <!-- 工人对白 -->
+        <g data-fx="fade" data-t0="17.4" data-t1="18.0">
+          <rect x="614" y="296" width="174" height="40" rx="7" fill="#fff" stroke="#d8d2c6"/>
+          <text x="628" y="322" class="ha-msg">活太大，干不完</text>
+          <polygon points="700,336 716,336 736,348" fill="#fff" stroke="#d8d2c6"/>
+        </g>
+
+        <!-- 交付横幅 + 底注 -->
+        <g data-fx="rise" data-t0="25.2" data-t1="26.2">
+          <rect x="640" y="26" width="400" height="58" rx="8" fill="#0F6B5C"/>
+          <text x="840" y="64" text-anchor="middle" fill="#fff" class="ha-banner">三室两厅两卫 ✓ 交付</text>
+        </g>
+        <text data-fx="fade" data-t0="27.0" data-t1="28.2" x="640" y="452" class="ha-note">契约没变 —— 以后想加个车库，照着契约接着盖。</text>
+
+        <!-- 大播放键 -->
+        <g id="ha-bigplay" style="cursor:pointer">
+          <circle cx="880" cy="230" r="58" fill="rgba(248,247,243,.92)" stroke="#0F6B5C" stroke-width="2"/>
+          <circle cx="880" cy="230" r="44" fill="#0F6B5C"/>
+          <path d="M868,208 L904,230 L868,252 Z" fill="#fff"/>
+          <text x="880" y="308" text-anchor="middle" class="ha-note">点击播放 · 30 秒</text>
+        </g>
+      </svg>
+      <div class="ha-ctrl">
+        <button class="ha-btn" id="haPlay" aria-label="播放/暂停">▶</button>
+        <div class="ha-bar" id="haBar"><div class="ha-fill" id="haFill"></div><div class="ha-knob" id="haKnob"></div></div>
+        <span class="ha-time" id="haTime">0:00 / 0:30</span>
+        <button class="ha-btn" id="haReset" aria-label="回到开头">⟲</button>
+      </div>
+      <p class="ha-hint">现场演示：本页含 30 秒动画（点播放）。契约 = 让互不相识的工人能并行开工、最后拼得上的一组标准——86 型面板就是"接口对上，谁都能装"。</p>
+    </div>
+    <div class="notes" data-time="1:15">
+      <p>光讲五步还是抽象，我们盖一座房子。我提需求：三室两厅两卫。设计师跟我来回几轮，落成一张需求清单——大小、风格、二层、院子、窗户、地砖，全在上面。</p>
+      <p>清单交给项目经理，拆成四份活：地基、水电、砌墙、装修。同时给了一份契约：入户电 220 伏；开关面板一律 86 型——谁家的面板都能装上；冷热水管间距 15 公分、左热右冷；承重墙不许动。所有人照契约开工，互相不认识也能接上活。</p>
+      <p>砌墙的活太大，招了个小工，两块墙一起砌——能并行就并行。最后房子交付。记住这张契约卡：接口对上，谁都能接活——后面讲"好改好加"，全靠它。</p>
+    </div>
+  </section>
+
+  <!-- 09 -->
 <section class="slide" data-title="成本：为什么小模型够用">
-    <div class="slide-head"><span class="section-label">03 / 为什么成立</span><span class="page-num">8 / 14</span></div>
+    <div class="slide-head"><span class="section-label">03 / 为什么成立</span><span class="page-num">9 / 15</span></div>
     <h2>为什么便宜模型够用</h2>
     <div class="cost-layout">
       <div class="cost-left">
@@ -649,16 +901,16 @@
       </div>
     </div>
     <div class="pullquote">省钱的不是模型，是<em>拆解</em>。</div>
-    <div class="notes" data-time="1:15">
+    <div class="notes" data-time="1:05">
       <p>为什么便宜模型够用？我们做过对照：同一类任务，Flash 低思考的成本，大概是旗舰高思考的 1/30。</p>
       <p>旗舰为什么厉害？它能长程思考，能想到你想不到的东西，可能做得更漂亮、兜底更多。但它一次要端住整个系统。拆成小块之后，每块只需要局部最优。于是我把 30 倍的额度拆成三份：一份专门规划，一份专门执行，一份专门审核。用 3 份预算，去换它 30 份的质量。</p>
       <p>注意，这不是说小模型比旗舰强，是说这个活被拆到不需要旗舰的粒度。同样是 1 个任务的预算，我能跑 30 次；30 次里拿 3 次做三个岗位。</p>
     </div>
   </section>
 
-  <!-- 09 -->
+  <!-- 10 -->
 <section class="slide" data-title="为什么好改：契约就是拼图的形状">
-    <div class="slide-head"><span class="section-label">04 / 为什么好改</span><span class="page-num">9 / 14</span></div>
+    <div class="slide-head"><span class="section-label">04 / 为什么好改</span><span class="page-num">10 / 15</span></div>
     <h2>为什么好改：契约就是拼图的形状</h2>
     <div class="puzzle-layout">
       <div class="puzzle-copy">
@@ -722,9 +974,9 @@
     </div>
   </section>
 
-  <!-- 10 -->
+  <!-- 11 -->
 <section class="slide" data-title="第二次改造：功能清单 + 上一次的契约">
-    <div class="slide-head"><span class="section-label">04 / 为什么好加</span><span class="page-num">10 / 14</span></div>
+    <div class="slide-head"><span class="section-label">04 / 为什么好加</span><span class="page-num">11 / 15</span></div>
     <h2>第二次改造，只给功能清单 + 上一次的契约</h2>
     <div class="iter-layout">
       <div class="iter-copy">
@@ -782,9 +1034,9 @@
     </div>
   </section>
 
-  <!-- 11 -->
+  <!-- 12 -->
 <section class="slide" data-title="案例：12 行到 2.3 万行">
-    <div class="slide-head"><span class="section-label">05 / 真实案例</span><span class="page-num">11 / 14</span></div>
+    <div class="slide-head"><span class="section-label">05 / 真实案例</span><span class="page-num">12 / 15</span></div>
     <h2>一个真实的内部站点：AI 补给站</h2>
     <div class="case-layout">
       <div class="case-left">
@@ -819,16 +1071,16 @@
       </div>
     </div>
     <div class="pullquote">第一次交付，证明它<em>能写</em>；第二次迭代，证明它<em>能改</em>。</div>
-    <div class="notes" data-time="1:10">
+    <div class="notes" data-time="1:05">
       <p>这是真实案例：AI 补给站，一个内部学习分享站。起点就是这 12 行功能清单，我没写 PRD，也没画架构。我只给了一份清单，回答了 AI 问我的几个问题。</p>
       <p>一期 5 块，10,891 行；二期在已有代码上加 6 块，又加了 1.2 万行。两期合计约 2.3 万行。代码跑了 2 小时，自动化测试 40 分钟。分两个晚上跑完。</p>
       <p>链接在这里：站点和功能清单。如果有时间，我可以点开给大家看。</p>
     </div>
   </section>
 
-  <!-- 12 -->
+  <!-- 13 -->
 <section class="slide" data-title="具体流程：从功能清单到 AI 验收">
-    <div class="slide-head"><span class="section-label">05 / 怎么干</span><span class="page-num">12 / 14</span></div>
+    <div class="slide-head"><span class="section-label">05 / 怎么干</span><span class="page-num">13 / 15</span></div>
     <h2>我具体是怎么干的</h2>
     <div class="workflow-layout">
       <div class="wf-steps">
@@ -879,16 +1131,16 @@
       </aside>
     </div>
     <div class="pullquote">我只做一头：<em>提需求</em>；验收也交给 AI。</div>
-    <div class="notes" data-time="1:10">
+    <div class="notes" data-time="1:05">
       <p>具体我是怎么干的？第一步，给功能清单，不写 PRD，也不画架构；链接在这里，就 12 行。第二步，让我的 AI 出 PRD：它读懂清单，反问我几个问题，产出一份完整设计。</p>
       <p>第三步，把设计交给工具，也就是施工队：Planner 拆块写契约，Executor 照单施工，Auditor 独立审。第四步，完成的块先由我的 AI 按契约验收，不通过就打回。</p>
       <p>第五步，让 AI 作为用户验收：再生成一份用例清单，让它操作我的电脑，打开真实站点一条条点；用例链接也在这里。我只做一头，中间和验收都由它自己跑。</p>
     </div>
   </section>
 
-  <!-- 13 -->
+  <!-- 14 -->
 <section class="slide" data-title="验收：AI 自己当用户">
-    <div class="slide-head"><span class="section-label">05 / 验收</span><span class="page-num">13 / 14</span></div>
+    <div class="slide-head"><span class="section-label">05 / 验收</span><span class="page-num">14 / 15</span></div>
     <h2>交付前，它自己先当了一回用户</h2>
     <div class="accept-layout">
       <div class="accept-left">
@@ -925,9 +1177,9 @@
     </div>
   </section>
 
-  <!-- 14 -->
+  <!-- 15 -->
 <section class="slide" data-title="我做了什么，得到了什么">
-    <div class="slide-head"><span class="section-label">06 / 收尾</span><span class="page-num">14 / 14</span></div>
+    <div class="slide-head"><span class="section-label">06 / 收尾</span><span class="page-num">15 / 15</span></div>
     <h2>我做了什么，得到了什么</h2>
     <div class="what-grid">
       <div class="what-col">
@@ -998,6 +1250,7 @@
   const ovGrid = document.getElementById('ovGrid');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = lightbox.querySelector('img');
+  let haToggle = null, haPrintApply = null;
   let index = 0;
   let remaining = 15 * 60;
   let timerId = null;
@@ -1097,7 +1350,11 @@
       if (e.key === 'o' || e.key === 'O') { closeOverview(); }
       return;
     }
-    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); next(); }
+    if (e.key === ' ') {
+      if (document.querySelector('.slide.active.anim-page')) { e.preventDefault(); haToggle(); }
+      else { e.preventDefault(); next(); }
+    }
+    else if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); next(); }
     else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prev(); }
     else if (e.key === 'Home') { e.preventDefault(); go(0); }
     else if (e.key === 'End') { e.preventDefault(); go(slides.length - 1); }
@@ -1139,6 +1396,130 @@
   });
   lightbox.addEventListener('click', function(e){ e.stopPropagation(); closeLightbox(); });
 
+    /* house animation */
+  const haStage = document.querySelector('.ha-stage');
+  if (haStage) {
+    const HA_DUR = 30;
+    const bigPlay = document.getElementById('ha-bigplay');
+    const btn = document.getElementById('haPlay');
+    const bar = document.getElementById('haBar');
+    const fill = document.getElementById('haFill');
+    const knob = document.getElementById('haKnob');
+    const timeEl = document.getElementById('haTime');
+    const items = Array.from(haStage.querySelectorAll('[data-fx]')).map(function(el){
+      const it = {
+        el: el, fx: el.dataset.fx,
+        t0: parseFloat(el.dataset.t0), t1: parseFloat(el.dataset.t1),
+        out0: el.dataset.out0 != null ? parseFloat(el.dataset.out0) : null,
+        out1: el.dataset.out1 != null ? parseFloat(el.dataset.out1) : null,
+        p: el.dataset.p != null ? parseFloat(el.dataset.p) : 1,
+        dx: el.dataset.dx != null ? parseFloat(el.dataset.dx) : 0,
+        dy: el.dataset.dy != null ? parseFloat(el.dataset.dy) : 0,
+        s: el.dataset.s != null ? parseFloat(el.dataset.s) : 1,
+        f2t0: el.dataset.t2 != null ? parseFloat(el.dataset.t2) : null,
+        f2t1: el.dataset.t3 != null ? parseFloat(el.dataset.t3) : null
+      };
+      if (it.fx === 'dash') {
+        const L = el.getTotalLength();
+        el.style.strokeDasharray = L;
+        it.len = L;
+      }
+      return it;
+    });
+    const ease = function(k){ return 1 - Math.pow(1 - k, 3); };
+    const seg = function(t, a, b){ return Math.max(0, Math.min(1, (t - a) / (b - a))); };
+    let haT = 0, haPlaying = false, haRaf = null, haLast = 0;
+
+    function haApply(sec){
+      for (let i = 0; i < items.length; i++){
+        const it = items[i];
+        const kin = ease(seg(sec, it.t0, it.t1));
+        let vis = 1;
+        if (it.out0 != null) vis = 1 - ease(seg(sec, it.out0, it.out1));
+        const op = kin * vis * it.p;
+        switch (it.fx){
+          case 'fade':
+            it.el.style.opacity = op;
+            break;
+          case 'rise':
+            it.el.style.opacity = op;
+            it.el.style.transform = 'translateY(' + ((1 - kin) * 12) + 'px)';
+            break;
+          case 'growx':
+            it.el.style.opacity = 1;
+            it.el.style.transform = 'scaleX(' + kin + ')';
+            break;
+          case 'growy':
+            it.el.style.opacity = 1;
+            it.el.style.transform = 'scaleY(' + kin + ')';
+            break;
+          case 'dash':
+            it.el.style.opacity = 1;
+            it.el.style.strokeDashoffset = it.len * (1 - kin);
+            break;
+          case 'fly': {
+            const kf = it.f2t0 != null ? ease(seg(sec, it.f2t0, it.f2t1)) : 0;
+            it.el.style.opacity = op;
+            it.el.style.transform = 'translate(' + (it.dx * kf) + 'px,' + (it.dy * kf) + 'px) scale(' + (1 - (1 - it.s) * kf) + ')';
+            break;
+          }
+        }
+      }
+      if (bigPlay) bigPlay.style.opacity = sec > 0.05 ? 0 : 1;
+    }
+    function haUI(){
+      const pct = (haT / HA_DUR) * 100;
+      fill.style.width = pct + '%';
+      knob.style.left = pct + '%';
+      timeEl.textContent = '0:' + String(Math.floor(haT)).padStart(2,'0') + ' / 0:30';
+    }
+    function haSetBtn(){ btn.textContent = haPlaying ? '⏸' : (haT >= HA_DUR ? '⟲' : '▶'); }
+    haToggle = function(){
+      if (haPlaying){
+        haPlaying = false; cancelAnimationFrame(haRaf); haRaf = null;
+      } else {
+        if (haT >= HA_DUR) haT = 0;
+        haPlaying = true; haLast = performance.now();
+        haRaf = requestAnimationFrame(haTick);
+      }
+      haSetBtn();
+    }
+    function haTick(ts){
+      if (!haPlaying) return;
+      haT = Math.min(HA_DUR, haT + (ts - haLast) / 1000);
+      haLast = ts;
+      haApply(haT); haUI();
+      if (haT >= HA_DUR){ haPlaying = false; haSetBtn(); haRaf = null; return; }
+      haRaf = requestAnimationFrame(haTick);
+    }
+    function haSeek(clientX){
+      const r = bar.getBoundingClientRect();
+      haT = Math.max(0, Math.min(1, (clientX - r.left) / r.width)) * HA_DUR;
+      haApply(haT); haUI(); haSetBtn();
+    }
+    btn.addEventListener('click', function(e){ e.stopPropagation(); haToggle(); });
+    document.getElementById('haReset').addEventListener('click', function(e){
+      e.stopPropagation(); haPlaying = false; cancelAnimationFrame(haRaf); haRaf = null;
+      haT = 0; haApply(0); haUI(); haSetBtn();
+    });
+    let haDrag = false;
+    bar.addEventListener('pointerdown', function(e){
+      e.stopPropagation(); haDrag = true;
+      haPlaying = false; cancelAnimationFrame(haRaf); haRaf = null;
+      bar.setPointerCapture(e.pointerId); haSeek(e.clientX); haSetBtn();
+    });
+    bar.addEventListener('pointermove', function(e){ if (haDrag){ e.stopPropagation(); haSeek(e.clientX); } });
+    bar.addEventListener('pointerup', function(){ haDrag = false; });
+    if (bigPlay) bigPlay.addEventListener('click', function(e){ e.stopPropagation(); if (!haPlaying) haToggle(); });
+    haStage.querySelector('svg').addEventListener('click', function(e){
+      e.stopPropagation();
+      if (e.target.closest('#ha-bigplay')) return;
+      haToggle();
+    });
+    haApply(0); haUI();
+    haPrintApply = function(){ haApply(HA_DUR); haUI(); };
+  }
+
   notes.addEventListener('click', function(e){ e.stopPropagation(); });
 
   buildOverview();
@@ -1154,6 +1535,7 @@
   if (location.search.indexOf('print=1') !== -1) {
     document.body.classList.add('print');
     slides.forEach(function(s){ s.classList.add('active', 'run'); });
+    if (haPrintApply) haPrintApply();
   }
 })();
 </script>
