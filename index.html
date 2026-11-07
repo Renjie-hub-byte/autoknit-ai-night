@@ -1223,7 +1223,7 @@
 <div id="hud">
   <span id="timer">15:00</span>
 </div>
-<div id="hint">→ 翻页 · N 讲稿 · F 全屏 · O 目录</div>
+<div id="hint">← → 翻页 · N 讲稿 · F 全屏 · O 目录</div>
 <div id="progress"></div>
 
 <div id="notes">
@@ -1365,12 +1365,6 @@
     else if (e.key === 'r' || e.key === 'R') { resetTimer(); }
   });
 
-  stage.addEventListener('click', function(e){
-    if (notes.classList.contains('open') || overview.classList.contains('open')) return;
-    if (e.target.closest('button, a, .artifact, [data-zoom]')) return;
-    const rect = stage.getBoundingClientRect();
-    if (e.clientX < rect.left + rect.width / 2) prev(); else next();
-  });
 
   let tx = 0, ty = 0;
   stage.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, {passive:true});
