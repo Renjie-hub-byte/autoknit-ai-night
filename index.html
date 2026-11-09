@@ -117,6 +117,19 @@
   .diag-tags span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;border:1px solid var(--line);padding:5px 8px;color:var(--muted)}
   .chat-foot{margin-top:8px;font-size:13px;color:var(--muted)}
   .chat-foot-note{margin-top:24px;font-size:13px;line-height:1.6;color:var(--muted)}
+  /* dense 聊天流：12 轮一屏排完 */
+  .chat.dense{gap:4px;max-height:640px}
+  .chat.dense .msg{padding:5px 12px;font-size:14px;line-height:1.4}
+  .chat.dense .msg .who{display:inline;font-size:9.5px;margin-right:8px;margin-bottom:0}
+  .chat.dense .meta{display:block;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:2px;letter-spacing:.02em}
+  .chat.dense .msg.ai.bad .meta{color:var(--orange)}
+  /* 累计账单卡 */
+  .bill{margin-top:18px;border:1px solid #E7C9BC;border-left:3px solid var(--orange);background:#FDF7F3;padding:12px 16px;border-radius:3px}
+  .bill-title{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--orange);margin-bottom:8px}
+  .bill-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px}
+  .bill-grid b{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--ink)}
+  .bill-grid span{font-size:11px;color:var(--muted);margin-left:5px;font-family:var(--mono)}
+  .bill-note{margin-top:8px;font-size:12.5px;color:var(--orange);line-height:1.5}
 
   /* root cause / chair-house */
   .root-lede{font-size:19px;line-height:1.8;color:var(--ink-2);margin-bottom:16px;max-width:1180px}
@@ -567,27 +580,43 @@
     <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">4 / 16</span></div>
     <h2>你一定见过的循环</h2>
     <div class="chat-layout">
-      <div class="chat">
-        <div class="msg user" style="--d:.05s"><div class="who">你</div>帮我做个内部学习网站，能看课程、记积分。</div>
-        <div class="msg ai" style="--d:.3s"><div class="who">AI</div>好的，已完成 ✅</div>
-        <div class="msg user" style="--d:.55s"><div class="who">你</div>加个登录，按部门看数据。</div>
-        <div class="msg ai" style="--d:.8s"><div class="who">AI</div>已加上 ✅</div>
-        <div class="msg user" style="--d:1.05s"><div class="who">你</div>原来的课程页怎么打不开了？</div>
-        <div class="msg ai bad" style="--d:1.3s"><div class="who">AI</div>抱歉，我重新给你一份完整代码。</div>
-        <div class="msg user" style="--d:1.55s"><div class="who">你</div>积分怎么没了……</div>
-        <div class="msg ai bad" style="--d:1.8s"><div class="who">AI</div>抱歉，我再修一版。</div>
+      <div class="chat dense">
+        <div class="msg user" style="--d:.05s"><div class="who">你</div>帮我做一个一键生图的网页：上传照片、写一句要求，调 API 按要求出图。</div>
+        <div class="msg ai" style="--d:.35s"><div class="who">AI</div>好的，已完成 ✅ 新建 4 个文件：上传页 / 生成页 / API 对接 / 样式。<span class="meta">4 文件 · 8 分钟 · 12,400 tok · 24 积分</span></div>
+        <div class="msg user" style="--d:.65s"><div class="who">你</div>对了，得知道用户有没有钱——加个登录，再能看到余额。</div>
+        <div class="msg ai" style="--d:.95s"><div class="who">AI</div>已加上 ✅ 登录 + 余额展示完成。<span class="meta">3 文件 · 6 分钟 · 9,800 tok · 18 积分</span></div>
+        <div class="msg user" style="--d:1.25s"><div class="who">你</div>生成过的照片总得有个相册吧？不然忘了保存，就找不到了。</div>
+        <div class="msg ai" style="--d:1.55s"><div class="who">AI</div>相册已加 ✅ 支持浏览历史图片。<span class="meta">4 文件 · 7 分钟 · 11,200 tok · 21 积分</span></div>
+        <div class="msg user" style="--d:1.85s"><div class="who">你</div>怎么图片生成不出来了？</div>
+        <div class="msg ai bad" style="--d:2.15s"><div class="who">AI</div>抱歉，我改坏了生图的核心文档，正在修理。<span class="meta">5 文件 · 12 分钟 · 18,600 tok · 35 积分</span></div>
+        <div class="msg user" style="--d:2.45s"><div class="who">你</div>余额怎么又显示不出来了？</div>
+        <div class="msg ai bad" style="--d:2.75s"><div class="who">AI</div>又发现一个关键问题，马上修。<span class="meta">4 文件 · 10 分钟 · 15,300 tok · 28 积分</span></div>
+        <div class="msg user" style="--d:3.05s"><div class="who">你</div>这次终于通了。对了——相册里的照片，能不能点一下就继续改图？</div>
+        <div class="msg ai" style="--d:3.35s"><div class="who">AI</div>好的，现在为您修改。<span class="meta">6 文件 · 15 分钟 · 22,800 tok · 42 积分</span></div>
+        <div class="chat-foot">怎么用起来，问题越来越多了……</div>
       </div>
       <aside class="diagnosis">
         <div class="eyebrow">DIAGNOSIS</div>
         <h3>不是它不聪明。</h3>
         <p>是它在没有<span>图纸</span>、没有<span>分工</span>、没有<span>验收</span>的情况下开工。</p>
         <div class="diag-tags"><span>没有图纸</span><span>没有分工</span><span>没有验收</span></div>
-        <p class="chat-foot-note">第 5 轮。你已经不记得最初想要什么了。</p>
+        <div class="bill">
+          <div class="bill-title">第 6 轮 · 累计账单</div>
+          <div class="bill-grid">
+            <div><b>58</b><span>分钟</span></div>
+            <div><b>90.1k</b><span>tokens</span></div>
+            <div><b>168</b><span>积分</span></div>
+            <div><b>26</b><span>次文件改动</span></div>
+          </div>
+          <p class="bill-note">其中 2 轮，在修上一轮引入的 bug。数据为示意。</p>
+        </div>
+        <p class="chat-foot-note">第 6 轮。你已经不记得最初想要什么了。</p>
       </aside>
     </div>
     <div class="pullquote">这不是模型问题，是<em>流程问题</em>。</div>
     <div class="notes" data-time="0:40">
-      <p>这个循环你一定见过：你说做个学习网站，它说已完成；你说加个登录，它说加上了；你问原来的页面怎么打不开了，它说抱歉，我重新给你一份完整代码；你说积分怎么没了，它说抱歉，我再修一版。</p>
+      <p>这个循环你一定见过：你说做个一键生图的网页，它说已完成，还煞有介事列了文件清单；你说加登录和余额，它说已加上；你说生成过的照片得有个相册，它说相册已加。然后开始崩：图片怎么生成不出来了？它说抱歉，改坏了核心文档，正在修理；余额怎么又显示不出来了？它说又发现一个关键问题。你好不容易跑通了，再让它加个「相册里点一下就继续改图」——用起来问题越来越多了。</p>
+      <p>指右边的账单：六轮对话，58 分钟、9 万 token、168 积分、26 次文件改动——其中两轮，纯粹在修上一轮引入的 bug。</p>
       <p>注意，它不是不聪明。它是在没有图纸、没有分工、没有验收的情况下开工。</p>
     </div>
   </section>
