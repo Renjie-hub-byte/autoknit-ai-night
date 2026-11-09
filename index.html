@@ -51,7 +51,7 @@
   .page-num{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.08em}
   h1,h2,h3,p{margin:0}
   h1{font-family:var(--serif);font-weight:600;font-size:76px;line-height:1.08;letter-spacing:-.01em}
-  h2{font-family:var(--serif);font-weight:600;font-size:46px;line-height:1.18;letter-spacing:-.005em;margin-bottom:24px}
+  h2{font-family:var(--serif);font-weight:600;font-size:50px;line-height:1.16;letter-spacing:-.005em;margin-bottom:26px}
   h3{font-family:var(--sans);font-weight:600;font-size:23px;line-height:1.35}
   p{font-size:18px;line-height:1.75;color:var(--ink-2)}
   a{color:inherit}
@@ -90,8 +90,8 @@
   .cover-meta{margin-left:auto;text-align:right;font-size:13px;line-height:1.8;color:var(--muted)}
 
   /* pain */
-  .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:8px}
-  .pain{padding-top:18px;border-top:2px solid var(--ink);min-height:340px;display:flex;flex-direction:column}
+  .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:8px;flex:1;align-content:center}
+  .pain{padding-top:18px;border-top:2px solid var(--ink);min-height:265px;display:flex;flex-direction:column}
   .pain:nth-child(2){border-top-color:var(--teal)}
   .pain:nth-child(3){border-top-color:var(--orange)}
   .pain .num{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--muted);margin-bottom:20px}
@@ -104,9 +104,9 @@
   .chat-layout{display:grid;grid-template-columns:1.45fr .85fr;gap:54px;flex:1;min-height:0;overflow:hidden}
   .chat{display:flex;flex-direction:column;gap:8px;padding-top:0;max-height:560px;overflow:hidden}
   .msg{max-width:78%;padding:10px 15px;border-radius:3px;font-size:16px;line-height:1.55;opacity:0;transform:translateY(8px)}
-  .msg.user{align-self:flex-end;background:var(--paper-2);border:1px solid var(--line-2);color:var(--ink)}
-  .msg.ai{align-self:flex-start;background:#fff;border:1px solid var(--line);color:var(--ink-2)}
-  .msg.ai.bad{color:var(--orange);border-color:#E7C9BC}
+  .msg.user{align-self:flex-end;background:var(--paper-2);color:var(--ink)}
+  .msg.ai{align-self:flex-start;background:#fff;color:var(--ink-2)}
+  .msg.ai.bad{color:var(--orange);background:var(--orange-soft)}
   .msg .who{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--muted);margin-bottom:3px}
   .diagnosis{border-left:1px solid var(--line);padding-left:38px;display:flex;flex-direction:column;justify-content:center}
   .diagnosis .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--orange);margin-bottom:16px}
@@ -114,7 +114,7 @@
   .diagnosis p{font-size:17px;line-height:1.8;color:var(--ink-2)}
   .diagnosis p span{color:var(--teal);font-weight:600}
   .diag-tags{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap}
-  .diag-tags span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;border:1px solid var(--line);padding:5px 8px;color:var(--muted)}
+  .diag-tags span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;background:var(--paper-2);padding:5px 8px;color:var(--muted)}
   .chat-foot{margin-top:8px;font-size:13px;color:var(--muted)}
   .chat-foot-note{margin-top:24px;font-size:13px;line-height:1.6;color:var(--muted)}
   /* dense 聊天流：12 轮一屏排完 */
@@ -124,7 +124,7 @@
   .chat.dense .meta{display:block;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:2px;letter-spacing:.02em}
   .chat.dense .msg.ai.bad .meta{color:var(--orange)}
   /* 累计账单卡 */
-  .bill{margin-top:18px;border:1px solid #E7C9BC;border-left:3px solid var(--orange);background:#FDF7F3;padding:12px 16px;border-radius:3px}
+  .bill{margin-top:18px;border-left:3px solid var(--orange);background:#FDF7F3;padding:12px 16px;border-radius:3px}
   .bill-title{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--orange);margin-bottom:8px}
   .bill-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px}
   .bill-grid b{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--ink)}
@@ -152,14 +152,14 @@
   .idea-art{flex:1;display:flex;align-items:center;justify-content:center;min-height:0}
   .idea-art svg{width:100%;max-width:460px;height:auto;max-height:280px}
   .idea-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-  .idea-tags span{font-family:var(--mono);font-size:11px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
-  .idea-tags span.bad{color:#B4441C;border-color:#D9B8A8}
-  .idea-tags span.ok{color:var(--teal);border-color:#BFD8D1}
+  .idea-tags span{font-family:var(--mono);font-size:11px;padding:4px 10px;background:var(--paper-2);border-radius:999px;color:var(--muted)}
+  .idea-tags span.bad{color:var(--orange);background:var(--orange-soft)}
+  .idea-tags span.ok{color:var(--teal);background:var(--teal-soft)}
   .why-strip{display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:14px;margin:16px 0 12px}
-  .why-item{border:1px solid var(--line);border-radius:10px;padding:11px 16px;background:#fff}
+  .why-item{border-radius:3px;padding:11px 16px;background:#fff}
   .why-item .tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted)}
   .why-item p{font-size:14.5px;line-height:1.5;margin-top:4px;color:var(--ink-2)}
-  .why-item.final{border:2px solid var(--teal);background:#F2F7F5}
+  .why-item.final{background:#F2F7F5;border-left:3px solid var(--teal)}
   .why-item.final .tag{color:var(--teal)}
   .why-item.final p{color:var(--ink)}
   .why-item.final p strong{color:var(--teal)}
@@ -170,7 +170,7 @@
   .v-roles span{font-family:var(--mono);font-size:10px;color:var(--teal);letter-spacing:.03em}
 
   /* crew flow */
-  .crew-flow{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:2px}
+  .crew-flow{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:2px;flex:1;align-content:center}
   .crew-node{padding:15px 15px 16px;border-right:1px solid var(--line-2);position:relative;display:flex;flex-direction:column;min-height:250px}
   .crew-node:last-child{border-right:0}
   .crew-node:not(:last-child)::after{
@@ -327,7 +327,7 @@
   .accept-sub{margin-top:8px;font-size:15px;color:var(--muted)}
   .bars{display:flex;align-items:flex-end;gap:12px;height:130px;margin-top:26px;border-bottom:1px solid var(--line)}
   .bar-wrap{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:130px}
-  .bar{width:100%;flex:0 0 auto;background:linear-gradient(180deg,rgba(15,107,92,.42),rgba(15,107,92,.14));border-top:2px solid var(--teal);transform-origin:bottom;opacity:.95}
+  .bar{width:100%;flex:0 0 auto;background:rgba(15,107,92,.32);border-top:2px solid var(--teal);transform-origin:bottom;opacity:.95}
   .bar-labels{display:flex;gap:12px;margin-top:7px}
   .bar-labels span{flex:1;text-align:center;font-family:var(--mono);font-size:9px;color:var(--muted)}
   .bar-vals{display:flex;gap:12px;margin-top:3px}
@@ -341,7 +341,7 @@
   .accept-link{margin-top:9px}
 
   /* close */
-  .what-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:4px}
+  .what-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:4px;flex:1;align-content:center}
   .what-col h3{font-family:var(--serif);font-size:25px;font-weight:600;margin-bottom:8px}
   .what-item{display:grid;grid-template-columns:24px 1fr;gap:9px;padding:8px 0;border-bottom:1px solid var(--line-2)}
   .what-item .n{font-family:var(--mono);font-size:10px;color:var(--teal);padding-top:3px}
@@ -632,7 +632,7 @@
         <h3>许愿式编程</h3>
         <p>听得懂，做得到。小东西，一个人就够了。</p>
         <div class="v-art chair">
-          <svg viewBox="0 0 260 240" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="color:var(--ink)">
+          <svg viewBox="0 0 260 240" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--ink)">
             <path d="M55 35 H120 V125 H55 Z"/>
             <path d="M45 125 H155 V145 H45 Z"/>
             <path d="M55 145 V200 M145 145 V200"/>
@@ -646,7 +646,7 @@
         <h3>工程化交付</h3>
         <p>设计、项目、图纸、施工、监理，一棒接一棒。</p>
         <div class="v-art">
-          <svg viewBox="0 0 460 280" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="color:var(--ink)">
+          <svg viewBox="0 0 460 280" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--ink)">
             <path d="M50 132 L230 36 L410 132"/>
             <path d="M80 132 V240 H380 V132"/>
             <rect x="180" y="176" width="50" height="64"/>
@@ -918,7 +918,7 @@
           </g>
         </g>
         <g data-fx="rise" data-t0="23.0" data-t1="24.0">
-          <g stroke="#8a8578" stroke-width="2.4">
+          <g stroke="#8a8578" stroke-width="2.2">
             <line x1="1180" y1="378" x2="1180" y2="410"/><line x1="1207" y1="378" x2="1207" y2="410"/><line x1="1234" y1="378" x2="1234" y2="410"/><line x1="1261" y1="378" x2="1261" y2="410"/><line x1="1288" y1="378" x2="1288" y2="410"/><line x1="1315" y1="378" x2="1315" y2="410"/><line x1="1342" y1="378" x2="1342" y2="410"/><line x1="1369" y1="378" x2="1369" y2="410"/><line x1="1396" y1="378" x2="1396" y2="410"/>
             <line x1="1176" y1="384" x2="1400" y2="384"/><line x1="1176" y1="398" x2="1400" y2="398"/>
           </g>
