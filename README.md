@@ -48,13 +48,12 @@
 
 | 文件 | 用途 |
 |---|---|
-| `autoknit-ai-night.html` | **最终演示稿**，15 页，单文件 |
-| `autoknit-ai-night.pdf` | PDF 备用，15 页 16:9（动画页为最终帧静帧） |
-| `讲稿.md` | 15 分钟口播稿 + 5 个可能被问的问题 |
+| `autoknit-ai-night.html` | **最终演示稿**，16 页，单文件 |
+| `autoknit-ai-night.pdf` | PDF 备用，16 页 16:9（动画页为最终帧静帧） |
+| `讲稿.md` | 15 分钟口播稿（16 页口径）+ 5 个可能被问的问题 |
 | `deck.template.html` | 源模板（改内容改这个） |
 | `assets/` | 看板截图 |
 | `build.py` | 把截图内嵌进单文件 HTML |
-| `deck.v1.template.html` / `autoknit-ai-night.v1.*` | 老版本备份 |
 
 ## 改内容后重新生成
 
