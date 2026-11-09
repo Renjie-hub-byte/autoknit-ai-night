@@ -130,6 +130,29 @@
   .v-art{flex:1;margin-top:6px;display:flex;align-items:center;justify-content:center;padding-bottom:2px}
   .v-art svg{width:100%;height:auto;max-height:300px}
   .v-art.chair svg{max-height:280px;max-width:320px}
+  /* idea page: 铁板 vs 零件 */
+  .idea-visual{display:grid;grid-template-columns:1fr 1fr;gap:44px;flex:1;min-height:0;align-items:stretch}
+  .idea-panel{border-top:2px solid var(--muted);padding-top:12px;display:flex;flex-direction:column;min-height:0}
+  .idea-panel.want{border-top-color:var(--teal)}
+  .idea-panel h3{font-family:var(--serif);font-size:28px;font-weight:600;margin:4px 0 2px}
+  .idea-panel p{font-size:14px;line-height:1.55;color:var(--ink-2)}
+  .idea-art{flex:1;display:flex;align-items:center;justify-content:center;min-height:0}
+  .idea-art svg{width:100%;max-width:460px;height:auto;max-height:280px}
+  .idea-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+  .idea-tags span{font-family:var(--mono);font-size:11px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+  .idea-tags span.bad{color:#B4441C;border-color:#D9B8A8}
+  .idea-tags span.ok{color:var(--teal);border-color:#BFD8D1}
+  .why-strip{display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:14px;margin:16px 0 12px}
+  .why-item{border:1px solid var(--line);border-radius:10px;padding:11px 16px;background:#fff}
+  .why-item .tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted)}
+  .why-item p{font-size:14.5px;line-height:1.5;margin-top:4px;color:var(--ink-2)}
+  .why-item.final{border:2px solid var(--teal);background:#F2F7F5}
+  .why-item.final .tag{color:var(--teal)}
+  .why-item.final p{color:var(--ink)}
+  .why-item.final p strong{color:var(--teal)}
+  .analogy-bar{border-top:1px dashed var(--line);padding-top:11px;font-size:14px;line-height:1.6;color:var(--ink-2)}
+  .analogy-bar strong{color:var(--ink)}
+  .analogy-bar .mono{font-size:12px;color:var(--teal)}
   .v-roles{display:flex;gap:9px;flex-wrap:wrap;margin-top:8px}
   .v-roles span{font-family:var(--mono);font-size:10px;color:var(--teal);letter-spacing:.03em}
 
@@ -436,8 +459,80 @@
   </section>
 
   <!-- 02 -->
+<section class="slide" data-title="核心思路：让代码好改">
+    <div class="slide-head"><span class="section-label">00 / 核心思路</span><span class="page-num">2 / 16</span></div>
+    <h2>先说这条路的逻辑：让代码好改</h2>
+    <div class="idea-visual">
+      <div class="idea-panel">
+        <div class="v-label">AI 写代码的默认产物</div>
+        <h3>铁板一块</h3>
+        <p>它只负责完成你提的需求。好不好维护、日后怎么改，不在它的考虑范围——写完即止。</p>
+        <div class="idea-art">
+          <svg viewBox="0 0 400 220" fill="none" stroke="#171614" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="一块铁板：一体成型，中间出现裂缝">
+            <rect x="52" y="56" width="280" height="112" rx="5" fill="#EFECE3"/>
+            <path d="M96 168 L140 56 M172 168 L216 56" stroke="#DDD8CC" stroke-width="1.5"/>
+            <path d="M192 56 L198 88 L184 110 L200 134 L190 168" stroke="#B4441C" stroke-width="2.2"/>
+            <path d="M200 134 L228 146 M184 110 L158 122 M190 168 L212 186" stroke="#B4441C" stroke-width="1.4" stroke-dasharray="3 5"/>
+            <circle cx="192" cy="56" r="4" fill="#B4441C" stroke="none"/>
+            <text x="236" y="42" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#B4441C">改一处 → 动全身</text>
+            <text x="52" y="206" font-family="SF Mono, Menlo, monospace" font-size="11" fill="#7A746A">一体成型 · 拆不开 · 换不了</text>
+          </svg>
+        </div>
+        <div class="idea-tags"><span class="bad">一次成型</span><span class="bad">改一处 · 动全身</span><span class="bad">只能整个重来</span></div>
+      </div>
+      <div class="idea-panel want">
+        <div class="v-label">我们要的产物</div>
+        <h3>零件化 · 可插拔</h3>
+        <p>像身边的商品：零件拼成，边界清楚。坏了换一块，想加往外接，互不牵连。</p>
+        <div class="idea-art">
+          <svg viewBox="0 0 400 220" fill="none" stroke="#171614" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="积木组合：可以换一块、加一块">
+            <defs>
+              <marker id="arrIdea" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="#0F6B5C"/>
+              </marker>
+            </defs>
+            <rect x="46" y="168" width="250" height="22" rx="4" fill="#EFECE3"/>
+            <rect x="62" y="100" width="70" height="68" fill="#FFFFFF"/>
+            <rect x="136" y="66" width="84" height="102" fill="#E5EFEB" stroke="#0F6B5C"/>
+            <rect x="160" y="52" width="16" height="14" fill="#E5EFEB" stroke="#0F6B5C"/>
+            <rect x="184" y="52" width="16" height="14" fill="#E5EFEB" stroke="#0F6B5C"/>
+            <rect x="224" y="118" width="72" height="50" fill="none" stroke="#B4441C" stroke-width="1.6" stroke-dasharray="6 6"/>
+            <rect x="236" y="52" width="72" height="50" fill="#E5EFEB" stroke="#0F6B5C" stroke-width="2"/>
+            <path d="M272 108 L272 114" stroke="#0F6B5C" stroke-width="2" marker-end="url(#arrIdea)"/>
+            <text x="236" y="44" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#0F6B5C">坏了 · 换一块</text>
+            <rect x="318" y="118" width="52" height="50" fill="none" stroke="#0F6B5C" stroke-width="1.6" stroke-dasharray="6 6"/>
+            <path d="M300 143 L314 143" stroke="#0F6B5C" stroke-width="2" marker-end="url(#arrIdea)"/>
+            <text x="318" y="108" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#0F6B5C">想加 · 往外接</text>
+          </svg>
+        </div>
+        <div class="idea-tags"><span class="ok">坏了换一块</span><span class="ok">想加往外接</span><span class="ok">边界清楚</span></div>
+      </div>
+    </div>
+    <div class="why-strip">
+      <div class="why-item">
+        <div class="tag">备选路线</div>
+        <p>「提前把需求全想清楚」——资深产品专家，也做不到想全。</p>
+      </div>
+      <div class="why-item">
+        <div class="tag">现实</div>
+        <p>上线之后，一定会加功能、改功能。「改」，躲不掉。</p>
+      </div>
+      <div class="why-item final">
+        <div class="tag">所以 · 唯一可靠的路线</div>
+        <p><strong>让代码好改</strong>：零件化、可插拔——改，就变成了换零件。</p>
+      </div>
+    </div>
+    <div class="analogy-bar">身边的东西，除了一次性的，<strong>都是零件化、可插拔的</strong>——小到孩子的积木，大到三元桥换梁：<span class="mono">2015 年，1300 吨预制新梁，43 小时整座桥换完</span>。桥是零件拼的，才敢整座换。</div>
+    <div class="notes" data-time="0:50">
+      <p>开始之前，先说清楚这条路的逻辑。让 AI 写代码，它只会完成你的需求——它并不考虑这代码日后好不好维护、好不好改，写完就完了。这意味着它产出的东西是铁板一块，很难改。</p>
+      <p>那补救办法是不是提前把需求想清楚？很难——你让一个资深的产品专家来梳理，他也不一定能想清楚、想完整。而且你保证不了功能上线之后一点不加。既然「改」躲不掉，唯一可靠的路线，就是让代码好改。</p>
+      <p>你看看身边的东西，除了一次性的，全是零件化、可插拔的。小到一个玩具，大到三元桥换桥——2015 年，1300 吨的新梁提前预制好，43 个小时，整座桥换完。因为它是零件拼的，才敢这么换。今天要讲的整套东西，就是让 AI 写的代码变成这样。</p>
+    </div>
+  </section>
+
+  <!-- 03 -->
 <section class="slide" data-title="痛点：三个崩法">
-    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">2 / 15</span></div>
+    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">3 / 16</span></div>
     <h2>AI 写代码，为什么总是后半段崩</h2>
     <div class="pain-grid">
       <div class="pain" style="--d:.0s">
@@ -467,9 +562,9 @@
     </div>
   </section>
 
-  <!-- 03 -->
+  <!-- 04 -->
 <section class="slide" data-title="聊天死循环">
-    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">3 / 15</span></div>
+    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">4 / 16</span></div>
     <h2>你一定见过的循环</h2>
     <div class="chat-layout">
       <div class="chat">
@@ -497,9 +592,9 @@
     </div>
   </section>
 
-  <!-- 04 -->
+  <!-- 05 -->
 <section class="slide" data-title="根因：缺工程纪律">
-    <div class="slide-head"><span class="section-label">02 / 根因</span><span class="page-num">4 / 15</span></div>
+    <div class="slide-head"><span class="section-label">02 / 根因</span><span class="page-num">5 / 16</span></div>
     <h2>他缺的是工程纪律。</h2>
     <p class="root-lede">许愿式编程很火：你可以跟一个木工说“给我打一把漂亮的椅子”，他能做到。<br>但你不可能跟他说“帮我把整个家装修一遍”。</p>
     <div class="split-visual">
@@ -546,9 +641,9 @@
     </div>
   </section>
 
-  <!-- 05 -->
+  <!-- 06 -->
 <section class="slide" data-title="工程队：五个角色">
-    <div class="slide-head"><span class="section-label">02 / 根因 · 工程队</span><span class="page-num">5 / 15</span></div>
+    <div class="slide-head"><span class="section-label">02 / 根因 · 工程队</span><span class="page-num">6 / 16</span></div>
     <h2>一支装修队，是怎么把一个家装完的</h2>
     <div class="crew-flow">
       <div class="crew-node" style="--d:.0s">
@@ -589,9 +684,9 @@
     </div>
   </section>
 
-  <!-- 06 -->
+  <!-- 07 -->
 <section class="slide" data-title="AI 分工：五个角色">
-    <div class="slide-head"><span class="section-label">03 / 它是什么</span><span class="page-num">6 / 15</span></div>
+    <div class="slide-head"><span class="section-label">03 / 它是什么</span><span class="page-num">7 / 16</span></div>
     <h2>这套班子，搬进 AI 里</h2>
     <div class="crew-flow">
       <div class="crew-node" style="--d:.0s">
@@ -632,9 +727,9 @@
     </div>
   </section>
 
-  <!-- 07 -->
+  <!-- 08 -->
 <section class="slide" data-title="流水线：五个动作">
-    <div class="slide-head"><span class="section-label">03 / 它是什么</span><span class="page-num">7 / 15</span></div>
+    <div class="slide-head"><span class="section-label">03 / 它是什么</span><span class="page-num">8 / 16</span></div>
     <h2>一条流水线，五个动作</h2>
     <div class="pipeline-layout">
       <div class="pipeline">
@@ -656,9 +751,9 @@
     </div>
   </section>
 
-  <!-- 08 -->
+  <!-- 09 -->
 <section class="slide anim-page" data-title="动画：盖一座房子">
-    <div class="slide-head"><span class="section-label">03 / 它是什么 · 动画</span><span class="page-num">8 / 15</span></div>
+    <div class="slide-head"><span class="section-label">03 / 它是什么 · 动画</span><span class="page-num">9 / 16</span></div>
     <h2>看一遍全流程：盖一座房子</h2>
     <div class="ha-stage">
       <svg class="ha-svg" viewBox="0 0 1440 470" role="img" aria-label="盖房子动画：需求→清单→任务+契约→施工→交付">
@@ -875,9 +970,9 @@
     </div>
   </section>
 
-  <!-- 09 -->
+  <!-- 10 -->
 <section class="slide" data-title="成本：为什么小模型够用">
-    <div class="slide-head"><span class="section-label">03 / 为什么成立</span><span class="page-num">9 / 15</span></div>
+    <div class="slide-head"><span class="section-label">03 / 为什么成立</span><span class="page-num">10 / 16</span></div>
     <h2>为什么便宜模型够用</h2>
     <div class="cost-layout">
       <div class="cost-left">
@@ -908,9 +1003,9 @@
     </div>
   </section>
 
-  <!-- 10 -->
+  <!-- 11 -->
 <section class="slide" data-title="为什么好改：契约就是拼图的形状">
-    <div class="slide-head"><span class="section-label">04 / 为什么好改</span><span class="page-num">10 / 15</span></div>
+    <div class="slide-head"><span class="section-label">04 / 为什么好改</span><span class="page-num">11 / 16</span></div>
     <h2>为什么好改：契约就是拼图的形状</h2>
     <div class="puzzle-layout">
       <div class="puzzle-copy">
@@ -974,9 +1069,9 @@
     </div>
   </section>
 
-  <!-- 11 -->
+  <!-- 12 -->
 <section class="slide" data-title="第二次改造：功能清单 + 上一次的契约">
-    <div class="slide-head"><span class="section-label">04 / 为什么好加</span><span class="page-num">11 / 15</span></div>
+    <div class="slide-head"><span class="section-label">04 / 为什么好加</span><span class="page-num">12 / 16</span></div>
     <h2>第二次改造，只给功能清单 + 上一次的契约</h2>
     <div class="iter-layout">
       <div class="iter-copy">
@@ -1034,9 +1129,9 @@
     </div>
   </section>
 
-  <!-- 12 -->
+  <!-- 13 -->
 <section class="slide" data-title="案例：12 行到 2.3 万行">
-    <div class="slide-head"><span class="section-label">05 / 真实案例</span><span class="page-num">12 / 15</span></div>
+    <div class="slide-head"><span class="section-label">05 / 真实案例</span><span class="page-num">13 / 16</span></div>
     <h2>一个真实的内部站点：AI 补给站</h2>
     <div class="case-layout">
       <div class="case-left">
@@ -1052,7 +1147,7 @@
         <div class="feature-more">… 共 12 条，来自 3 位同事</div>
         <div class="case-links">
           <a class="link" href="https://aidepot.renjie.store" target="_blank" rel="noopener">打开站点 ↗</a>
-          <a class="link" href="https://doc.weixin.qq.com/smartsheet/s3_AUgAqQbbAA0CNgyw7wugdQ7GPu0OK?tab=xjeY1W&amp;viewId=vhYIz3" target="_blank" rel="noopener">打开功能清单 ↗</a>
+          <a class="link" href="https://doc.weixin.qq.com/smartsheet/s3_AUgAqQbbAA0CNgyw7wugdQ7GPu0OK?&amp;tab=xjeY1W&amp;viewId=vhYIz3" target="_blank" rel="noopener">打开功能清单 ↗</a>
         </div>
       </div>
       <div class="case-right">
@@ -1078,9 +1173,9 @@
     </div>
   </section>
 
-  <!-- 13 -->
+  <!-- 14 -->
 <section class="slide" data-title="具体流程：从功能清单到 AI 验收">
-    <div class="slide-head"><span class="section-label">05 / 怎么干</span><span class="page-num">13 / 15</span></div>
+    <div class="slide-head"><span class="section-label">05 / 怎么干</span><span class="page-num">14 / 16</span></div>
     <h2>我具体是怎么干的</h2>
     <div class="workflow-layout">
       <div class="wf-steps">
@@ -1111,13 +1206,13 @@
         </div>
       </div>
       <aside class="wf-artifacts">
-        <div class="artifact" data-href="https://doc.weixin.qq.com/smartsheet/s3_AUgAqQbbAA0CNgyw7wugdQ7GPu0OK?tab=xjeY1W&amp;viewId=vhYIz3" role="link" tabindex="0">
+        <div class="artifact" data-href="https://doc.weixin.qq.com/smartsheet/s3_AUgAqQbbAA0CNgyw7wugdQ7GPu0OK?&amp;tab=xjeY1W&amp;viewId=vhYIz3" role="link" tabindex="0">
           <div class="mono">ARTIFACT 01 · 需求</div>
           <h3>功能清单</h3>
           <p>12 行，来自 3 位同事；起点只有这些。</p>
           <span class="link">打开功能清单 ↗</span>
         </div>
-        <div class="artifact" data-href="https://doc.weixin.qq.com/smartsheet/s3_ANIAtHhfAFICNKHnCNs0iTUSnnlRj_a?tab=RXiLR8&amp;viewId=vLtsG1" role="link" tabindex="0">
+        <div class="artifact" data-href="https://doc.weixin.qq.com/smartsheet/s3_ANIAtHhfAFICNKHnCNs0iTUSnnlRj_a?&amp;tab=RXiLR8&amp;viewId=vLtsG1" role="link" tabindex="0">
           <div class="mono">ARTIFACT 02 · 验收</div>
           <h3>验收用例</h3>
           <p>116 条，5 轮收敛；115 条通过、1 条未测。</p>
@@ -1138,9 +1233,9 @@
     </div>
   </section>
 
-  <!-- 14 -->
+  <!-- 15 -->
 <section class="slide" data-title="验收：AI 自己当用户">
-    <div class="slide-head"><span class="section-label">05 / 验收</span><span class="page-num">14 / 15</span></div>
+    <div class="slide-head"><span class="section-label">05 / 验收</span><span class="page-num">15 / 16</span></div>
     <h2>交付前，它自己先当了一回用户</h2>
     <div class="accept-layout">
       <div class="accept-left">
@@ -1166,7 +1261,7 @@
         </div>
         <div class="accept-foot">验收员置信度不够，会转人工——它不装懂。</div>
         <div class="accept-link">
-          <a class="link" href="https://doc.weixin.qq.com/smartsheet/s3_ANIAtHhfAFICNKHnCNs0iTUSnnlRj_a?tab=RXiLR8&amp;viewId=vLtsG1" target="_blank" rel="noopener">打开验收台账 ↗</a>
+          <a class="link" href="https://doc.weixin.qq.com/smartsheet/s3_ANIAtHhfAFICNKHnCNs0iTUSnnlRj_a?&amp;tab=RXiLR8&amp;viewId=vLtsG1" target="_blank" rel="noopener">打开验收台账 ↗</a>
         </div>
       </div>
     </div>
@@ -1177,9 +1272,9 @@
     </div>
   </section>
 
-  <!-- 15 -->
+  <!-- 16 -->
 <section class="slide" data-title="我做了什么，得到了什么">
-    <div class="slide-head"><span class="section-label">06 / 收尾</span><span class="page-num">15 / 15</span></div>
+    <div class="slide-head"><span class="section-label">06 / 收尾</span><span class="page-num">16 / 16</span></div>
     <h2>我做了什么，得到了什么</h2>
     <div class="what-grid">
       <div class="what-col">
