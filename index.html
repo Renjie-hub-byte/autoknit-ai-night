@@ -472,9 +472,86 @@
   </section>
 
   <!-- 02 -->
+<section class="slide" data-title="聊天死循环">
+    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">2 / 16</span></div>
+    <h2>你一定见过的循环</h2>
+    <div class="chat-layout">
+      <div class="chat dense">
+        <div class="msg user" style="--d:.05s"><div class="who">你</div>帮我做一个一键生图的网页：上传照片、写一句要求，调 API 按要求出图。</div>
+        <div class="msg ai" style="--d:.35s"><div class="who">AI</div>好的，已完成 ✅ 新建 4 个文件：上传页 / 生成页 / API 对接 / 样式。<span class="meta">4 文件 · 8 分钟 · 12,400 tok · 24 积分</span></div>
+        <div class="msg user" style="--d:.65s"><div class="who">你</div>对了，得知道用户有没有钱——加个登录，再能看到余额。</div>
+        <div class="msg ai" style="--d:.95s"><div class="who">AI</div>已加上 ✅ 登录 + 余额展示完成。<span class="meta">3 文件 · 6 分钟 · 9,800 tok · 18 积分</span></div>
+        <div class="msg user" style="--d:1.25s"><div class="who">你</div>生成过的照片总得有个相册吧？不然忘了保存，就找不到了。</div>
+        <div class="msg ai" style="--d:1.55s"><div class="who">AI</div>相册已加 ✅ 支持浏览历史图片。<span class="meta">4 文件 · 7 分钟 · 11,200 tok · 21 积分</span></div>
+        <div class="msg user" style="--d:1.85s"><div class="who">你</div>怎么图片生成不出来了？</div>
+        <div class="msg ai bad" style="--d:2.15s"><div class="who">AI</div>抱歉，我改坏了生图的核心文档，正在修理。<span class="meta">5 文件 · 12 分钟 · 18,600 tok · 35 积分</span></div>
+        <div class="msg user" style="--d:2.45s"><div class="who">你</div>余额怎么又显示不出来了？</div>
+        <div class="msg ai bad" style="--d:2.75s"><div class="who">AI</div>又发现一个关键问题，马上修。<span class="meta">4 文件 · 10 分钟 · 15,300 tok · 28 积分</span></div>
+        <div class="msg user" style="--d:3.05s"><div class="who">你</div>这次终于通了。对了——相册里的照片，能不能点一下就继续改图？</div>
+        <div class="msg ai" style="--d:3.35s"><div class="who">AI</div>好的，现在为您修改。<span class="meta">6 文件 · 15 分钟 · 22,800 tok · 42 积分</span></div>
+        <div class="chat-foot">怎么用起来，问题越来越多了……</div>
+      </div>
+      <aside class="diagnosis">
+        <div class="eyebrow">DIAGNOSIS</div>
+        <h3>不是它不聪明。</h3>
+        <p>是它在没有<span>图纸</span>、没有<span>分工</span>、没有<span>验收</span>的情况下开工。</p>
+        <div class="diag-tags"><span>没有图纸</span><span>没有分工</span><span>没有验收</span></div>
+        <div class="bill">
+          <div class="bill-title">第 6 轮 · 累计账单</div>
+          <div class="bill-grid">
+            <div><b>58</b><span>分钟</span></div>
+            <div><b>90.1k</b><span>tokens</span></div>
+            <div><b>168</b><span>积分</span></div>
+            <div><b>26</b><span>次文件改动</span></div>
+          </div>
+          <p class="bill-note">其中 2 轮，在修上一轮引入的 bug。数据为示意。</p>
+        </div>
+        <p class="chat-foot-note">第 6 轮。你已经不记得最初想要什么了。</p>
+      </aside>
+    </div>
+    <div class="pullquote">这不是模型问题，是<em>流程问题</em>。</div>
+    <div class="notes" data-time="0:40">
+      <p>先对个号：有没有人用 AI 写过东西？写过超过 500 行的，举个手。……很少，对吧。这个循环你一定见过：你说做个一键生图的网页，它说已完成，还煞有介事列了文件清单；你说加登录和余额，它说已加上；你说生成过的照片得有个相册，它说相册已加。然后开始崩：图片怎么生成不出来了？它说抱歉，改坏了核心文档，正在修理；余额怎么又显示不出来了？它说又发现一个关键问题。你好不容易跑通了，再让它加个「相册里点一下就继续改图」——用起来问题越来越多了。</p>
+      <p>指右边的账单：六轮对话，58 分钟、9 万 token、168 积分、26 次文件改动——其中两轮，纯粹在修上一轮引入的 bug。</p>
+      <p>注意，它不是不聪明。它是在没有图纸、没有分工、没有验收的情况下开工。</p>
+    </div>
+  </section>
+
+  <!-- 03 -->
+<section class="slide" data-title="痛点：三个崩法">
+    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">3 / 16</span></div>
+    <h2>AI 写代码，为什么总是后半段崩</h2>
+    <div class="pain-grid">
+      <div class="pain" style="--d:.0s">
+        <div class="num">01</div>
+        <h3>越写越偏</h3>
+        <p>聊到后面，它忘了前面的约定。你越解释，它越像在猜。</p>
+        <div class="pain-mark">↘</div>
+      </div>
+      <div class="pain" style="--d:.12s">
+        <div class="num">02</div>
+        <h3>说完成 ≠ 能跑</h3>
+        <p>它说“已完成”，你一跑就报错。它只对“我写了”负责，不对“你能用”负责。</p>
+        <div class="pain-mark">□</div>
+      </div>
+      <div class="pain" style="--d:.24s">
+        <div class="num">03</div>
+        <h3>改 A 炸 B</h3>
+        <p>没有边界，一坨代码牵一发动全身。改一个按钮，坏了三个页面。</p>
+        <div class="pain-mark">✕</div>
+      </div>
+    </div>
+    <div class="pullquote">小 demo 很爽；稍微大一点，就开始<em>来回拉扯</em>。</div>
+    <div class="notes" data-time="1:00">
+      <p>不是你们不行，是这件事本身有个坎。把上面这个循环拆开，就三种崩法：第一，越写越偏，聊到后面它忘了前面的约定；第二，它说“完成了”，你一跑就报错，因为它只对“我写了”负责，不对“你能用”负责；第三，改 A 炸 B，没有边界，一坨代码牵一发动全身。</p>
+      <p>小 demo 很爽，一到真要用，就开始拉扯。</p>
+    </div>
+  </section>
+
+  <!-- 04 -->
 <section class="slide" data-title="核心思路：让代码好改">
-    <div class="slide-head"><span class="section-label">00 / 核心思路</span><span class="page-num">2 / 16</span></div>
-    <h2>先说这条路的逻辑：让代码好改</h2>
+    <div class="slide-head"><span class="section-label">02 / 核心思路</span><span class="page-num">4 / 16</span></div>
+    <h2>那怎么办：让代码好改</h2>
     <div class="idea-visual">
       <div class="idea-panel">
         <div class="v-label">AI 写代码的默认产物</div>
@@ -537,93 +614,15 @@
     </div>
     <div class="analogy-bar">身边的东西，除了一次性的，<strong>都是零件化、可插拔的</strong>——小到孩子的积木，大到三元桥换梁：<span class="mono">2015 年，1300 吨预制新梁，43 小时整座桥换完</span>。桥是零件拼的，才敢整座换。</div>
     <div class="notes" data-time="0:50">
-      <p>开始之前，先说清楚这条路的逻辑。让 AI 写代码，它只会完成你的需求——它并不考虑这代码日后好不好维护、好不好改，写完就完了。这意味着它产出的东西是铁板一块，很难改。</p>
+      <p>问题看清了，说这条路的逻辑。让 AI 写代码，它只会完成你的需求——它并不考虑这代码日后好不好维护、好不好改，写完就完了。这意味着它产出的东西是铁板一块，很难改。</p>
       <p>那补救办法是不是提前把需求想清楚？很难——你让一个资深的产品专家来梳理，他也不一定能想清楚、想完整。而且你保证不了功能上线之后一点不加。既然「改」躲不掉，唯一可靠的路线，就是让代码好改。</p>
       <p>你看看身边的东西，除了一次性的，全是零件化、可插拔的。小到一个玩具，大到三元桥换桥——2015 年，1300 吨的新梁提前预制好，43 个小时，整座桥换完。因为它是零件拼的，才敢这么换。今天要讲的整套东西，就是让 AI 写的代码变成这样。</p>
     </div>
   </section>
 
-  <!-- 03 -->
-<section class="slide" data-title="痛点：三个崩法">
-    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">3 / 16</span></div>
-    <h2>AI 写代码，为什么总是后半段崩</h2>
-    <div class="pain-grid">
-      <div class="pain" style="--d:.0s">
-        <div class="num">01</div>
-        <h3>越写越偏</h3>
-        <p>聊到后面，它忘了前面的约定。你越解释，它越像在猜。</p>
-        <div class="pain-mark">↘</div>
-      </div>
-      <div class="pain" style="--d:.12s">
-        <div class="num">02</div>
-        <h3>说完成 ≠ 能跑</h3>
-        <p>它说“已完成”，你一跑就报错。它只对“我写了”负责，不对“你能用”负责。</p>
-        <div class="pain-mark">□</div>
-      </div>
-      <div class="pain" style="--d:.24s">
-        <div class="num">03</div>
-        <h3>改 A 炸 B</h3>
-        <p>没有边界，一坨代码牵一发动全身。改一个按钮，坏了三个页面。</p>
-        <div class="pain-mark">✕</div>
-      </div>
-    </div>
-    <div class="pullquote">小 demo 很爽；稍微大一点，就开始<em>来回拉扯</em>。</div>
-    <div class="notes" data-time="1:00">
-      <p>先对个号。有没有人用 AI 写过东西？写过超过 500 行的，举个手。……很少，对吧。</p>
-      <p>不是你们不行，是这件事本身有个坎。三个崩法：第一，越写越偏，聊到后面它忘了前面的约定；第二，它说“完成了”，你一跑就报错，因为它只对“我写了”负责，不对“你能用”负责；第三，改 A 炸 B，没有边界，一坨代码牵一发动全身。</p>
-      <p>小 demo 很爽，一到真要用，就开始拉扯。</p>
-    </div>
-  </section>
-
-  <!-- 04 -->
-<section class="slide" data-title="聊天死循环">
-    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">4 / 16</span></div>
-    <h2>你一定见过的循环</h2>
-    <div class="chat-layout">
-      <div class="chat dense">
-        <div class="msg user" style="--d:.05s"><div class="who">你</div>帮我做一个一键生图的网页：上传照片、写一句要求，调 API 按要求出图。</div>
-        <div class="msg ai" style="--d:.35s"><div class="who">AI</div>好的，已完成 ✅ 新建 4 个文件：上传页 / 生成页 / API 对接 / 样式。<span class="meta">4 文件 · 8 分钟 · 12,400 tok · 24 积分</span></div>
-        <div class="msg user" style="--d:.65s"><div class="who">你</div>对了，得知道用户有没有钱——加个登录，再能看到余额。</div>
-        <div class="msg ai" style="--d:.95s"><div class="who">AI</div>已加上 ✅ 登录 + 余额展示完成。<span class="meta">3 文件 · 6 分钟 · 9,800 tok · 18 积分</span></div>
-        <div class="msg user" style="--d:1.25s"><div class="who">你</div>生成过的照片总得有个相册吧？不然忘了保存，就找不到了。</div>
-        <div class="msg ai" style="--d:1.55s"><div class="who">AI</div>相册已加 ✅ 支持浏览历史图片。<span class="meta">4 文件 · 7 分钟 · 11,200 tok · 21 积分</span></div>
-        <div class="msg user" style="--d:1.85s"><div class="who">你</div>怎么图片生成不出来了？</div>
-        <div class="msg ai bad" style="--d:2.15s"><div class="who">AI</div>抱歉，我改坏了生图的核心文档，正在修理。<span class="meta">5 文件 · 12 分钟 · 18,600 tok · 35 积分</span></div>
-        <div class="msg user" style="--d:2.45s"><div class="who">你</div>余额怎么又显示不出来了？</div>
-        <div class="msg ai bad" style="--d:2.75s"><div class="who">AI</div>又发现一个关键问题，马上修。<span class="meta">4 文件 · 10 分钟 · 15,300 tok · 28 积分</span></div>
-        <div class="msg user" style="--d:3.05s"><div class="who">你</div>这次终于通了。对了——相册里的照片，能不能点一下就继续改图？</div>
-        <div class="msg ai" style="--d:3.35s"><div class="who">AI</div>好的，现在为您修改。<span class="meta">6 文件 · 15 分钟 · 22,800 tok · 42 积分</span></div>
-        <div class="chat-foot">怎么用起来，问题越来越多了……</div>
-      </div>
-      <aside class="diagnosis">
-        <div class="eyebrow">DIAGNOSIS</div>
-        <h3>不是它不聪明。</h3>
-        <p>是它在没有<span>图纸</span>、没有<span>分工</span>、没有<span>验收</span>的情况下开工。</p>
-        <div class="diag-tags"><span>没有图纸</span><span>没有分工</span><span>没有验收</span></div>
-        <div class="bill">
-          <div class="bill-title">第 6 轮 · 累计账单</div>
-          <div class="bill-grid">
-            <div><b>58</b><span>分钟</span></div>
-            <div><b>90.1k</b><span>tokens</span></div>
-            <div><b>168</b><span>积分</span></div>
-            <div><b>26</b><span>次文件改动</span></div>
-          </div>
-          <p class="bill-note">其中 2 轮，在修上一轮引入的 bug。数据为示意。</p>
-        </div>
-        <p class="chat-foot-note">第 6 轮。你已经不记得最初想要什么了。</p>
-      </aside>
-    </div>
-    <div class="pullquote">这不是模型问题，是<em>流程问题</em>。</div>
-    <div class="notes" data-time="0:40">
-      <p>这个循环你一定见过：你说做个一键生图的网页，它说已完成，还煞有介事列了文件清单；你说加登录和余额，它说已加上；你说生成过的照片得有个相册，它说相册已加。然后开始崩：图片怎么生成不出来了？它说抱歉，改坏了核心文档，正在修理；余额怎么又显示不出来了？它说又发现一个关键问题。你好不容易跑通了，再让它加个「相册里点一下就继续改图」——用起来问题越来越多了。</p>
-      <p>指右边的账单：六轮对话，58 分钟、9 万 token、168 积分、26 次文件改动——其中两轮，纯粹在修上一轮引入的 bug。</p>
-      <p>注意，它不是不聪明。它是在没有图纸、没有分工、没有验收的情况下开工。</p>
-    </div>
-  </section>
-
   <!-- 05 -->
 <section class="slide" data-title="根因：缺工程纪律">
-    <div class="slide-head"><span class="section-label">02 / 根因</span><span class="page-num">5 / 16</span></div>
+    <div class="slide-head"><span class="section-label">03 / 根因</span><span class="page-num">5 / 16</span></div>
     <h2>他缺的是工程纪律。</h2>
     <p class="root-lede">许愿式编程很火：你可以跟一个木工说“给我打一把漂亮的椅子”，他能做到。<br>但你不可能跟他说“帮我把整个家装修一遍”。</p>
     <div class="split-visual">
@@ -672,7 +671,7 @@
 
   <!-- 06 -->
 <section class="slide" data-title="工程队：五个角色">
-    <div class="slide-head"><span class="section-label">02 / 根因 · 工程队</span><span class="page-num">6 / 16</span></div>
+    <div class="slide-head"><span class="section-label">03 / 根因 · 工程队</span><span class="page-num">6 / 16</span></div>
     <h2>一支装修队，是怎么把一个家装完的</h2>
     <div class="crew-flow">
       <div class="crew-node" style="--d:.0s">
@@ -715,7 +714,7 @@
 
   <!-- 07 -->
 <section class="slide" data-title="AI 分工：五个角色">
-    <div class="slide-head"><span class="section-label">03 / 它是什么</span><span class="page-num">7 / 16</span></div>
+    <div class="slide-head"><span class="section-label">04 / 它是什么</span><span class="page-num">7 / 16</span></div>
     <h2>这套班子，搬进 AI 里</h2>
     <div class="crew-flow">
       <div class="crew-node" style="--d:.0s">
@@ -758,7 +757,7 @@
 
   <!-- 08 -->
 <section class="slide" data-title="流水线：五个动作">
-    <div class="slide-head"><span class="section-label">03 / 它是什么</span><span class="page-num">8 / 16</span></div>
+    <div class="slide-head"><span class="section-label">04 / 它是什么</span><span class="page-num">8 / 16</span></div>
     <h2>一条流水线，五个动作</h2>
     <div class="pipeline-layout">
       <div class="pipeline">
@@ -782,7 +781,7 @@
 
   <!-- 09 -->
 <section class="slide anim-page" data-title="动画：盖一座房子">
-    <div class="slide-head"><span class="section-label">03 / 它是什么 · 动画</span><span class="page-num">9 / 16</span></div>
+    <div class="slide-head"><span class="section-label">04 / 它是什么 · 动画</span><span class="page-num">9 / 16</span></div>
     <h2>看一遍全流程：盖一座房子</h2>
     <div class="ha-stage">
       <svg class="ha-svg" viewBox="0 0 1440 470" role="img" aria-label="盖房子动画：需求→清单→任务+契约→施工→交付">
@@ -1001,7 +1000,7 @@
 
   <!-- 10 -->
 <section class="slide" data-title="成本：为什么小模型够用">
-    <div class="slide-head"><span class="section-label">03 / 为什么成立</span><span class="page-num">10 / 16</span></div>
+    <div class="slide-head"><span class="section-label">05 / 为什么成立</span><span class="page-num">10 / 16</span></div>
     <h2>为什么便宜模型够用</h2>
     <div class="cost-layout">
       <div class="cost-left">
@@ -1034,7 +1033,7 @@
 
   <!-- 11 -->
 <section class="slide" data-title="为什么好改：契约就是拼图的形状">
-    <div class="slide-head"><span class="section-label">04 / 为什么好改</span><span class="page-num">11 / 16</span></div>
+    <div class="slide-head"><span class="section-label">06 / 为什么好改</span><span class="page-num">11 / 16</span></div>
     <h2>为什么好改：契约就是拼图的形状</h2>
     <div class="puzzle-layout">
       <div class="puzzle-copy">
@@ -1100,7 +1099,7 @@
 
   <!-- 12 -->
 <section class="slide" data-title="第二次改造：功能清单 + 上一次的契约">
-    <div class="slide-head"><span class="section-label">04 / 为什么好加</span><span class="page-num">12 / 16</span></div>
+    <div class="slide-head"><span class="section-label">06 / 为什么好加</span><span class="page-num">12 / 16</span></div>
     <h2>第二次改造，只给功能清单 + 上一次的契约</h2>
     <div class="iter-layout">
       <div class="iter-copy">
@@ -1160,7 +1159,7 @@
 
   <!-- 13 -->
 <section class="slide" data-title="案例：12 行到 2.3 万行">
-    <div class="slide-head"><span class="section-label">05 / 真实案例</span><span class="page-num">13 / 16</span></div>
+    <div class="slide-head"><span class="section-label">07 / 真实案例</span><span class="page-num">13 / 16</span></div>
     <h2>一个真实的内部站点：AI 补给站</h2>
     <div class="case-layout">
       <div class="case-left">
@@ -1204,7 +1203,7 @@
 
   <!-- 14 -->
 <section class="slide" data-title="具体流程：从功能清单到 AI 验收">
-    <div class="slide-head"><span class="section-label">05 / 怎么干</span><span class="page-num">14 / 16</span></div>
+    <div class="slide-head"><span class="section-label">07 / 怎么干</span><span class="page-num">14 / 16</span></div>
     <h2>我具体是怎么干的</h2>
     <div class="workflow-layout">
       <div class="wf-steps">
@@ -1264,7 +1263,7 @@
 
   <!-- 15 -->
 <section class="slide" data-title="验收：AI 自己当用户">
-    <div class="slide-head"><span class="section-label">05 / 验收</span><span class="page-num">15 / 16</span></div>
+    <div class="slide-head"><span class="section-label">07 / 验收</span><span class="page-num">15 / 16</span></div>
     <h2>交付前，它自己先当了一回用户</h2>
     <div class="accept-layout">
       <div class="accept-left">
@@ -1303,7 +1302,7 @@
 
   <!-- 16 -->
 <section class="slide" data-title="我做了什么，得到了什么">
-    <div class="slide-head"><span class="section-label">06 / 收尾</span><span class="page-num">16 / 16</span></div>
+    <div class="slide-head"><span class="section-label">08 / 收尾</span><span class="page-num">16 / 16</span></div>
     <h2>我做了什么，得到了什么</h2>
     <div class="what-grid">
       <div class="what-col">
