@@ -131,6 +131,17 @@
   .bill-grid span{font-size:11px;color:var(--muted);margin-left:5px;font-family:var(--mono)}
   .bill-note{margin-top:8px;font-size:12.5px;color:var(--orange);line-height:1.5}
 
+  /* brand mark in every header */
+  .brand{color:var(--teal);font-weight:600}
+  /* boundary page */
+  .bound-layout{display:grid;grid-template-columns:1fr 1.08fr;gap:56px;flex:1;min-height:0;align-content:center}
+  .bound-col ul{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-direction:column;gap:15px}
+  .bound-col li{border-left:3px solid var(--teal);padding-left:16px}
+  .bound-col.no li{border-left-color:var(--orange)}
+  .bound-col strong{display:block;font-size:17px;font-weight:600;margin-bottom:3px;color:var(--ink)}
+  .bound-col.no strong{color:var(--orange)}
+  .bound-col li>span{font-size:14px;line-height:1.55;color:var(--ink-2)}
+
   /* root cause / chair-house */
   .root-lede{font-size:19px;line-height:1.8;color:var(--ink-2);margin-bottom:16px;max-width:1180px}
   .root-lede strong{color:var(--ink);font-weight:600}
@@ -449,7 +460,7 @@
     <!-- 01 -->
 <section class="slide cover active" data-title="封面">
     <div class="cover-top">
-      <span class="mono">AUTOKNIT · 自研 AI 编程工具</span>
+      <span class="mono"><b class="brand">AI 促进中心</b> · AUTOKNIT 自研 AI 编程工具</span>
       <span class="mono">网科 / 2026.11</span>
     </div>
     <div class="cover-main">
@@ -473,7 +484,7 @@
 
   <!-- 02 -->
 <section class="slide" data-title="聊天死循环">
-    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">2 / 16</span></div>
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 01 / 痛点</span><span class="page-num">2 / 17</span></div>
     <h2>你一定见过的循环</h2>
     <div class="chat-layout">
       <div class="chat dense">
@@ -519,7 +530,7 @@
 
   <!-- 03 -->
 <section class="slide" data-title="痛点：三个崩法">
-    <div class="slide-head"><span class="section-label">01 / 痛点</span><span class="page-num">3 / 16</span></div>
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 01 / 痛点</span><span class="page-num">3 / 17</span></div>
     <h2>AI 写代码，为什么总是后半段崩</h2>
     <div class="pain-grid">
       <div class="pain" style="--d:.0s">
@@ -550,7 +561,7 @@
 
   <!-- 04 -->
 <section class="slide" data-title="核心思路：让代码好改">
-    <div class="slide-head"><span class="section-label">02 / 核心思路</span><span class="page-num">4 / 16</span></div>
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 02 / 核心思路</span><span class="page-num">4 / 17</span></div>
     <h2>那怎么办：让代码好改</h2>
     <div class="idea-visual">
       <div class="idea-panel">
@@ -622,7 +633,7 @@
 
   <!-- 05 -->
 <section class="slide" data-title="根因：缺工程纪律">
-    <div class="slide-head"><span class="section-label">03 / 根因</span><span class="page-num">5 / 16</span></div>
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 03 / 根因</span><span class="page-num">5 / 17</span></div>
     <h2>他缺的是工程纪律。</h2>
     <p class="root-lede">许愿式编程很火：你可以跟一个木工说“给我打一把漂亮的椅子”，他能做到。<br>但你不可能跟他说“帮我把整个家装修一遍”。</p>
     <div class="split-visual">
@@ -671,7 +682,7 @@
 
   <!-- 06 -->
 <section class="slide" data-title="工程队：五个角色">
-    <div class="slide-head"><span class="section-label">03 / 根因 · 工程队</span><span class="page-num">6 / 16</span></div>
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 03 / 根因 · 工程队</span><span class="page-num">6 / 17</span></div>
     <h2>一支装修队，是怎么把一个家装完的</h2>
     <div class="crew-flow">
       <div class="crew-node" style="--d:.0s">
@@ -714,7 +725,7 @@
 
   <!-- 07 -->
 <section class="slide" data-title="AI 分工：五个角色">
-    <div class="slide-head"><span class="section-label">04 / 它是什么</span><span class="page-num">7 / 16</span></div>
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 04 / 它是什么</span><span class="page-num">7 / 17</span></div>
     <h2>这套班子，搬进 AI 里</h2>
     <div class="crew-flow">
       <div class="crew-node" style="--d:.0s">
@@ -757,7 +768,7 @@
 
   <!-- 08 -->
 <section class="slide" data-title="流水线：五个动作">
-    <div class="slide-head"><span class="section-label">04 / 它是什么</span><span class="page-num">8 / 16</span></div>
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 04 / 它是什么</span><span class="page-num">8 / 17</span></div>
     <h2>一条流水线，五个动作</h2>
     <div class="pipeline-layout">
       <div class="pipeline">
@@ -781,7 +792,7 @@
 
   <!-- 09 -->
 <section class="slide anim-page" data-title="动画：盖一座房子">
-    <div class="slide-head"><span class="section-label">04 / 它是什么 · 动画</span><span class="page-num">9 / 16</span></div>
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 04 / 它是什么 · 动画</span><span class="page-num">9 / 17</span></div>
     <h2>看一遍全流程：盖一座房子</h2>
     <div class="ha-stage">
       <svg class="ha-svg" viewBox="0 0 1440 470" role="img" aria-label="盖房子动画：需求→清单→任务+契约→施工→交付">
@@ -1000,7 +1011,7 @@
 
   <!-- 10 -->
 <section class="slide" data-title="成本：为什么小模型够用">
-    <div class="slide-head"><span class="section-label">05 / 为什么成立</span><span class="page-num">10 / 16</span></div>
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 05 / 为什么成立</span><span class="page-num">10 / 17</span></div>
     <h2>为什么便宜模型够用</h2>
     <div class="cost-layout">
       <div class="cost-left">
@@ -1033,7 +1044,7 @@
 
   <!-- 11 -->
 <section class="slide" data-title="为什么好改：契约就是拼图的形状">
-    <div class="slide-head"><span class="section-label">06 / 为什么好改</span><span class="page-num">11 / 16</span></div>
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 06 / 为什么好改</span><span class="page-num">11 / 17</span></div>
     <h2>为什么好改：契约就是拼图的形状</h2>
     <div class="puzzle-layout">
       <div class="puzzle-copy">
@@ -1099,7 +1110,7 @@
 
   <!-- 12 -->
 <section class="slide" data-title="第二次改造：功能清单 + 上一次的契约">
-    <div class="slide-head"><span class="section-label">06 / 为什么好加</span><span class="page-num">12 / 16</span></div>
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 06 / 为什么好加</span><span class="page-num">12 / 17</span></div>
     <h2>第二次改造，只给功能清单 + 上一次的契约</h2>
     <div class="iter-layout">
       <div class="iter-copy">
@@ -1159,7 +1170,7 @@
 
   <!-- 13 -->
 <section class="slide" data-title="案例：12 行到 2.3 万行">
-    <div class="slide-head"><span class="section-label">07 / 真实案例</span><span class="page-num">13 / 16</span></div>
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 07 / 真实案例</span><span class="page-num">13 / 17</span></div>
     <h2>一个真实的内部站点：AI 补给站</h2>
     <div class="case-layout">
       <div class="case-left">
@@ -1203,7 +1214,7 @@
 
   <!-- 14 -->
 <section class="slide" data-title="具体流程：从功能清单到 AI 验收">
-    <div class="slide-head"><span class="section-label">07 / 怎么干</span><span class="page-num">14 / 16</span></div>
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 07 / 怎么干</span><span class="page-num">14 / 17</span></div>
     <h2>我具体是怎么干的</h2>
     <div class="workflow-layout">
       <div class="wf-steps">
@@ -1263,7 +1274,7 @@
 
   <!-- 15 -->
 <section class="slide" data-title="验收：AI 自己当用户">
-    <div class="slide-head"><span class="section-label">07 / 验收</span><span class="page-num">15 / 16</span></div>
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 07 / 验收</span><span class="page-num">15 / 17</span></div>
     <h2>交付前，它自己先当了一回用户</h2>
     <div class="accept-layout">
       <div class="accept-left">
@@ -1301,8 +1312,40 @@
   </section>
 
   <!-- 16 -->
+<section class="slide" data-title="边界：自己用可以，不要动生产">
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 08 / 边界</span><span class="page-num">16 / 17</span></div>
+    <h2>这条线，我必须说清楚</h2>
+    <div class="bound-layout">
+      <div class="bound-col">
+        <div class="v-label">鼓励这么用</div>
+        <ul>
+          <li><strong>做小 demo</strong><span>拿来和产品、研发沟通：把需求跑成能点的样子，比画原型快。</span></li>
+          <li><strong>做自己用的东西</strong><span>一个人用，坏了你自己重来，不牵连任何人、不占任何生产资源。</span></li>
+          <li><strong>研究、探索能力边界</strong><span>试 AI 能干什么、干到什么程度，为选型和评估攒判断。</span></li>
+        </ul>
+      </div>
+      <div class="bound-col no">
+        <div class="v-label">不要做：公司层面的生产环境</div>
+        <ul>
+          <li><strong>隐藏的 bug</strong><span>你自己测不全；一旦上线，影响的是同事的体验。</span></li>
+          <li><strong>数据泄露</strong><span>权限、脱敏、审计，AI 不会替你想——这是安全问题。</span></li>
+          <li><strong>性能与稳定性</strong><span>没压测、没兜底、没监控，出事就是生产事故。</span></li>
+          <li><strong>API Key 写在代码里</strong><span>AI 的老毛病；推到公网等于把钥匙挂在门上，直接造成损失。</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pullquote">自己用，坏了是<em>你的时间</em>；上生产，坏了是<em>事故</em>。</div>
+    <div class="notes" data-time="0:50">
+      <p>还有一条我必须说清楚。自己做应用、自己做工具，自己用可以；但不要去做公司层面生产环境的东西。</p>
+      <p>原因就是 AI 写代码绕不过去的几样：隐藏的 bug——你自己测不全，上线后影响的是同事；数据泄露——权限、脱敏、审计，AI 不会替你想，这是安全问题；性能和稳定性——没压测、没兜底，出事就是生产事故。还有一个最要命的：API Key 直接写在代码里，推到公网就等于把钥匙挂在门上，直接造成损失。</p>
+      <p>所以建议的用法就三条：做小 demo，跟产品和研发沟通，需求说得清；做自己日常用的东西，坏了你自己重来；研究、探索 AI 的边界，为选型攒判断。</p>
+      <p>一句话：自己用，坏了是你的时间；上生产，坏了是事故。</p>
+    </div>
+  </section>
+
+  <!-- 17 -->
 <section class="slide" data-title="我做了什么，得到了什么">
-    <div class="slide-head"><span class="section-label">08 / 收尾</span><span class="page-num">16 / 16</span></div>
+    <div class="slide-head"><span class="section-label"><b class="brand">AI 促进中心</b> · 09 / 收尾</span><span class="page-num">17 / 17</span></div>
     <h2>我做了什么，得到了什么</h2>
     <div class="what-grid">
       <div class="what-col">
